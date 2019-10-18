@@ -1,0 +1,5 @@
+<configuration xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/config">
+    <wsdl
+            location="src/webservice.motornet.wsdl"
+            packageName="com.ags.example.generated"/>
+</configuration>

@@ -1,0 +1,6126 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:motornetwebservice"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="urn:motornetwebservice" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+
+    
+    <types>
+
+
+        
+        <xsd:schema targetNamespace="urn:motornetwebservice">
+
+            <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+            <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/"/>
+
+
+            
+            <xsd:complexType name="loginResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="token"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                    <xsd:element type="tns:user" name="user"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getDatiUtenteResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="clienteID"/>
+
+                    <xsd:element type="xsd:string" name="variazioni"/>
+
+                    <xsd:element type="xsd:string" name="nome"/>
+
+                    <xsd:element type="xsd:string" name="ricerca_targa_in"/>
+
+                    <xsd:element type="xsd:string" name="ricerca_in"/>
+
+                    <xsd:element type="xsd:string" name="visualizzazione_optional"/>
+
+                    <xsd:element type="xsd:string" name="ricerca_targa_ministero"/>
+
+                    <xsd:element type="xsd:string" name="valutazione_retrodatata"/>
+
+                    <xsd:element type="xsd:string" name="ricerche_targhe_disponibili"/>
+
+                    <xsd:element type="xsd:string" name="valutazioni_disponibili"/>
+
+                    <xsd:element type="xsd:string" name="consultazioni_anagrafica_disponibili"/>
+
+                    <xsd:element type="xsd:string" name="permessi_valutazioni"/>
+
+                    <xsd:element type="xsd:string" name="costo_carrozzeria"/>
+
+                    <xsd:element type="xsd:string" name="costo_meccanica"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getMarcheResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:elencoMarcheArray" name="marche"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getAnniResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:elencoAnniArray" name="anni"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getModelliResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:elencoModelliArray" name="modelli"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getGruppoStoricoResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:elencoGruppoStoricoArray" name="gruppi"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getSerieGammaResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:elencoSerieGammaArray" name="serie"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getTipologiaResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:elencoTipologieArray" name="tipologie"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getPorteResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:elencoPorteArray" name="porte"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getTipoVINCResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:elencoTipiArray" name="tipi"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getPassiVINCResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:elencoPassiArray" name="passi"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getVersioniResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:elencoVersioniArray" name="versioni"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getVersioniRenResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:elencoVersioniRenArray" name="versioni"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getAccessoriResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:elencoAccessoriArray" name="serie"/>
+
+                    <xsd:element type="tns:elencoAccessoriArray" name="optional"/>
+
+                    <xsd:element type="tns:elencoAccessoriArray" name="pacchetti"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getAccessoriSicurezzaResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:elencoAccessoriSicurezzaArray" name="di_serie"/>
+
+                    <xsd:element type="tns:elencoAccessoriSicurezzaArray" name="a_pagamento"/>
+
+                    <xsd:element type="tns:elencoAccessoriSicurezzaArray" name="non_disponibili"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getRiparazioniResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:elencoRiparazioniArray" name="meccanica"/>
+
+                    <xsd:element type="tns:elencoRiparazioniArray" name="carrozzeria"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getDettaglioAutoResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:modello_auto" name="modello"/>
+
+                    <xsd:element type="xsd:string" name="accessi_disponibili"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getDettaglioAutoAggiuntivoResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:modello_auto_aggiuntivo" name="modello"/>
+
+                    <xsd:element type="xsd:string" name="accessi_disponibili"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getDettaglioCaravanResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:modello_caravan" name="modello"/>
+
+                    <xsd:element type="xsd:string" name="accessi_disponibili"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getDettaglioCamperResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:modello_camper" name="modello"/>
+
+                    <xsd:element type="xsd:string" name="accessi_disponibili"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getDettaglioMotoResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:modello_moto" name="modello"/>
+
+                    <xsd:element type="xsd:string" name="accessi_disponibili"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getDettaglioVindResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:modello_vcom_vind" name="modello"/>
+
+                    <xsd:element type="xsd:string" name="accessi_disponibili"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getDettaglioVcomResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:modello_vcom_vind" name="modello"/>
+
+                    <xsd:element type="xsd:string" name="accessi_disponibili"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getValutazioneResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:valutazione" name="valutazione"/>
+
+                    <xsd:element type="xsd:string" name="valutazioni_disponibili"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="searchTargaRenResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="tipo_veicolo"/>
+
+                    <xsd:element type="tns:elencoVeicoliRenArray" name="versioni"/>
+
+                    <xsd:element type="tns:marcaVeicoloArray" name="marca"/>
+
+                    <xsd:element type="tns:elencoModelliArray" name="modelli"/>
+
+                    <xsd:element type="tns:elencoPorteArray" name="porte"/>
+
+                    <xsd:element type="tns:elencoPassiArray" name="passo"/>
+
+                    <xsd:element type="tns:elencoTipiArray" name="tipologia"/>
+
+                    <xsd:element type="xsd:string" name="targa"/>
+
+                    <xsd:element type="xsd:string" name="telaio"/>
+
+                    <xsd:element type="xsd:string" name="data_imm"/>
+
+                    <xsd:element type="xsd:string" name="targa_estero"/>
+
+                    <xsd:element type="xsd:string" name="data_imm_estero"/>
+
+                    <xsd:element type="xsd:string" name="stato_estero"/>
+
+                    <xsd:element type="xsd:string" name="ricerche_targa_rimanenti"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="searchTargaResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="tipo_veicolo"/>
+
+                    <xsd:element type="tns:elencoVeicoliArray" name="versioni"/>
+
+                    <xsd:element type="tns:marcaVeicoloArray" name="marca"/>
+
+                    <xsd:element type="tns:elencoModelliArray" name="modelli"/>
+
+                    <xsd:element type="tns:elencoPorteArray" name="porte"/>
+
+                    <xsd:element type="tns:elencoPassiArray" name="passo"/>
+
+                    <xsd:element type="tns:elencoTipiArray" name="tipologia"/>
+
+                    <xsd:element type="xsd:string" name="targa"/>
+
+                    <xsd:element type="xsd:string" name="telaio"/>
+
+                    <xsd:element type="xsd:string" name="data_imm"/>
+
+                    <xsd:element type="xsd:string" name="targa_estero"/>
+
+                    <xsd:element type="xsd:string" name="data_imm_estero"/>
+
+                    <xsd:element type="xsd:string" name="stato_estero"/>
+
+                    <xsd:element type="xsd:string" name="ricerche_targa_rimanenti"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="searchTargaCostruttoreResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="tipo_veicolo"/>
+
+                    <xsd:element type="tns:elencoVeicoliInternoArray" name="versioni"/>
+
+                    <xsd:element type="tns:marcaVeicoloArray" name="marca"/>
+
+                    <xsd:element type="tns:elencoModelliArray" name="modelli"/>
+
+                    <xsd:element type="tns:elencoPorteArray" name="porte"/>
+
+                    <xsd:element type="tns:elencoPassiArray" name="passo"/>
+
+                    <xsd:element type="tns:elencoTipiArray" name="tipologia"/>
+
+                    <xsd:element type="xsd:string" name="targa"/>
+
+                    <xsd:element type="xsd:string" name="telaio"/>
+
+                    <xsd:element type="xsd:string" name="data_imm"/>
+
+                    <xsd:element type="xsd:string" name="targa_estero"/>
+
+                    <xsd:element type="xsd:string" name="data_imm_estero"/>
+
+                    <xsd:element type="xsd:string" name="stato_estero"/>
+
+                    <xsd:element type="xsd:string" name="ricerche_targa_rimanenti"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="searchTargaMinisteroResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="tipo_veicolo"/>
+
+                    <xsd:element type="tns:elencoVeicoliArray" name="versioni"/>
+
+                    <xsd:element type="tns:marcaVeicoloArray" name="marca"/>
+
+                    <xsd:element type="tns:elencoModelliArray" name="modelli"/>
+
+                    <xsd:element type="tns:elencoPorteArray" name="porte"/>
+
+                    <xsd:element type="tns:elencoPassiArray" name="passo"/>
+
+                    <xsd:element type="tns:elencoTipiArray" name="tipologia"/>
+
+                    <xsd:element type="xsd:string" name="targa"/>
+
+                    <xsd:element type="xsd:string" name="telaio"/>
+
+                    <xsd:element type="xsd:string" name="data_imm"/>
+
+                    <xsd:element type="xsd:string" name="immatricolazione_estera"/>
+
+                    <xsd:element type="xsd:string" name="targa_estero"/>
+
+                    <xsd:element type="xsd:string" name="data_imm_estero"/>
+
+                    <xsd:element type="xsd:string" name="stato_estero"/>
+
+                    <xsd:element type="xsd:string" name="ricerche_targa_rimanenti"/>
+
+                    <xsd:element type="xsd:string" name="codice_omologazione"/>
+
+                    <xsd:element type="xsd:string" name="codice_motore"/>
+
+                    <xsd:element type="xsd:string" name="data_ultima_revisione"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="searchTargaInternaResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="tipo_veicolo"/>
+
+                    <xsd:element type="tns:elencoVeicoliArray" name="versioni"/>
+
+                    <xsd:element type="tns:marcaVeicoloArray" name="marca"/>
+
+                    <xsd:element type="tns:elencoModelliArray" name="modelli"/>
+
+                    <xsd:element type="tns:elencoAlimentazioniArray" name="alimentazioni"/>
+
+                    <xsd:element type="tns:elencoPorteArray" name="porte"/>
+
+                    <xsd:element type="tns:elencoPassiArray" name="passo"/>
+
+                    <xsd:element type="tns:elencoTipiArray" name="tipologia"/>
+
+                    <xsd:element type="xsd:string" name="targa"/>
+
+                    <xsd:element type="xsd:string" name="telaio"/>
+
+                    <xsd:element type="xsd:string" name="data_imm"/>
+
+                    <xsd:element type="xsd:string" name="immatricolazione_estera"/>
+
+                    <xsd:element type="xsd:string" name="targa_estero"/>
+
+                    <xsd:element type="xsd:string" name="data_imm_estero"/>
+
+                    <xsd:element type="xsd:string" name="stato_estero"/>
+
+                    <xsd:element type="xsd:string" name="ricerche_targa_rimanenti"/>
+
+                    <xsd:element type="xsd:string" name="codice_omologazione"/>
+
+                    <xsd:element type="xsd:string" name="codice_motore"/>
+
+                    <xsd:element type="xsd:string" name="data_ultima_revisione"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getCodiceMotoreResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="codice_motore"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="searchEurotaxResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:elencoVeicoliArray" name="versioni"/>
+
+                    <xsd:element type="tns:marcaVeicoloArray" name="marca"/>
+
+                    <xsd:element type="tns:elencoModelliArray" name="modelli"/>
+
+                    <xsd:element type="tns:elencoPorteArray" name="porte"/>
+
+                    <xsd:element type="tns:elencoPassiArray" name="passo"/>
+
+                    <xsd:element type="tns:elencoTipiArray" name="tipologia"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="searchOmologazioneResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:elencoVeicoliArray" name="versioni"/>
+
+                    <xsd:element type="tns:marcaVeicoloArray" name="marca"/>
+
+                    <xsd:element type="tns:elencoModelliArray" name="modelli"/>
+
+                    <xsd:element type="tns:elencoPorteArray" name="porte"/>
+
+                    <xsd:element type="tns:elencoPassiArray" name="passo"/>
+
+                    <xsd:element type="tns:elencoTipiArray" name="tipologia"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getAnniValutazioneResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:elencoAnniArray" name="anni"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getXMLResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="xml"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="user">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="ricerca_targa_in"/>
+
+                    <xsd:element type="xsd:string" name="ricerca_in"/>
+
+                    <xsd:element type="xsd:string" name="visualizzazione_optional"/>
+
+                    <xsd:element type="xsd:string" name="ricerca_targa_ministero"/>
+
+                    <xsd:element type="xsd:string" name="valutazione_retrodatata"/>
+
+                    <xsd:element type="xsd:string" name="ricerche_targhe_disponibili"/>
+
+                    <xsd:element type="xsd:string" name="valutazioni_disponibili"/>
+
+                    <xsd:element type="xsd:string" name="consultazioni_anagrafica_disponibili"/>
+
+                    <xsd:element type="xsd:string" name="permessi_valutazioni"/>
+
+                    <xsd:element type="xsd:string" name="costo_carrozzeria"/>
+
+                    <xsd:element type="xsd:string" name="costo_meccanica"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="marca">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="acronimo"/>
+
+                    <xsd:element type="xsd:string" name="nome"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoMarcheArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:marca[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="anno">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="numero"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoAnniArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:anno[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="modello">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="modello"/>
+
+                    <xsd:element type="xsd:string" name="cod_gamma_mod"/>
+
+                    <xsd:element type="xsd:string" name="desc_gamma_mod"/>
+
+                    <xsd:element type="xsd:string" name="da"/>
+
+                    <xsd:element type="xsd:string" name="a"/>
+
+                    <xsd:element type="xsd:string" name="codice_gruppo_storico"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_gruppo_storico"/>
+
+                    <xsd:element type="xsd:string" name="codice_serie_gamma"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_serie_gamma"/>
+
+                    <xsd:element type="xsd:string" name="codice_modello"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_modello"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="gruppoStorico">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="codice"/>
+
+                    <xsd:element type="xsd:string" name="descrizione"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="serieGamma">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="codice"/>
+
+                    <xsd:element type="xsd:string" name="descrizione"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="tipologia">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="codice_tipo"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_tipo"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoModelliArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:modello[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoGruppoStoricoArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:gruppoStorico[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoSerieGammaArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:serieGamma[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoTipologieArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:tipologia[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="porta">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="numero"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="alimentazione">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="codice"/>
+
+                    <xsd:element type="xsd:string" name="descrizione"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoPorteArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:porta[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoAlimentazioniArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:alimentazione[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="tipo">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="codice"/>
+
+                    <xsd:element type="xsd:string" name="descrizione"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoTipiArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:tipo[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="passo">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="descrizione"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoPassiArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:passo[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="versione">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="CodiceEurotax"/>
+
+                    <xsd:element type="xsd:string" name="CodiceMotornet"/>
+
+                    <xsd:element type="xsd:string" name="FineProduzione"/>
+
+                    <xsd:element type="xsd:string" name="InizioProduzione"/>
+
+                    <xsd:element type="xsd:string" name="Nome"/>
+
+                    <xsd:element type="xsd:string" name="a"/>
+
+                    <xsd:element type="xsd:string" name="da"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="versioneRen">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="CodiceEurotax"/>
+
+                    <xsd:element type="xsd:string" name="CodiceMotornet"/>
+
+                    <xsd:element type="xsd:string" name="FineProduzione"/>
+
+                    <xsd:element type="xsd:string" name="InizioProduzione"/>
+
+                    <xsd:element type="xsd:string" name="Nome"/>
+
+                    <xsd:element type="xsd:string" name="a"/>
+
+                    <xsd:element type="xsd:string" name="da"/>
+
+                    <xsd:element type="xsd:string" name="marca"/>
+
+                    <xsd:element type="xsd:string" name="marca_acronimo"/>
+
+                    <xsd:element type="xsd:string" name="nome_allestimento"/>
+
+                    <xsd:element type="xsd:string" name="codice_alimentazione"/>
+
+                    <xsd:element type="xsd:string" name="alimentazione"/>
+
+                    <xsd:element type="xsd:string" name="data_listino"/>
+
+                    <xsd:element type="xsd:string" name="prezzo_listino"/>
+
+                    <xsd:element type="xsd:string" name="codice_cambio"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_cambio"/>
+
+                    <xsd:element type="xsd:string" name="cavalli_fiscali"/>
+
+                    <xsd:element type="xsd:string" name="hp"/>
+
+                    <xsd:element type="xsd:string" name="porte"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoVersioniArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:versione[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoVersioniRenArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:versioneRen[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="accessorio">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="IDAccessorio"/>
+
+                    <xsd:element type="xsd:string" name="IDDizionario"/>
+
+                    <xsd:element type="xsd:string" name="IDGruppo"/>
+
+                    <xsd:element type="xsd:string" name="IDEquipaggiamento"/>
+
+                    <xsd:element type="xsd:string" name="IDDisponibilita"/>
+
+                    <xsd:element type="xsd:string" name="Prezzo"/>
+
+                    <xsd:element type="xsd:string" name="PrezzoListino"/>
+
+                    <xsd:element type="xsd:string" name="DataListino"/>
+
+                    <xsd:element type="xsd:string" name="Versione"/>
+
+                    <xsd:element type="xsd:string" name="Codice"/>
+
+                    <xsd:element type="xsd:string" name="IDDizionarioGruppo"/>
+
+                    <xsd:element type="xsd:string" name="Descrizione"/>
+
+                    <xsd:element type="xsd:string" name="DescrizioneBreve"/>
+
+                    <xsd:element type="xsd:string" name="DescrizioneNormalizzato"/>
+
+                    <xsd:element type="xsd:string" name="CodiceNormalizzato"/>
+
+                    <xsd:element type="xsd:string" name="IDExternal_Accessorio"/>
+
+                    <xsd:element type="xsd:string" name="CodiceDisponibilita"/>
+
+                    <xsd:element type="xsd:string" name="DescrizioneDisponibilita"/>
+
+                    <xsd:element type="xsd:string" name="DescrizioneEquipaggiamento"/>
+
+                    <xsd:element type="xsd:string" name="DescrizioneGruppo"/>
+
+                    <xsd:element type="xsd:string" name="CodiceGruppo"/>
+
+                    <xsd:element type="xsd:string" name="CodiceMotornet"/>
+
+                    <xsd:element type="xsd:string" name="DescrizioneMotornet"/>
+
+                    <xsd:element type="xsd:string" name="FormulaInclusione"/>
+
+                    <xsd:element type="xsd:string" name="FormulaEsclusione"/>
+
+                    <xsd:element type="xsd:string" name="FormulaVincoli"/>
+
+                    <xsd:element type="xsd:string" name="Macrogruppo"/>
+
+                    <xsd:element type="xsd:string" name="CodMacrogruppo"/>
+
+                    <xsd:element type="xsd:string" name="IDMacrogruppo"/>
+
+                    <xsd:element type="tns:svalutazione" name="Svalutazione"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="accessorio_sicurezza">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="tipo"/>
+
+                    <xsd:element type="xsd:string" name="nome"/>
+
+                    <xsd:element type="xsd:string" name="codice"/>
+
+                    <xsd:element type="xsd:string" name="descrizione"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="svalutazione">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="PrezzoSval"/>
+
+                    <xsd:element type="xsd:string" name="PrezzoOrig"/>
+
+                    <xsd:element type="xsd:string" name="StatoSval"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoAccessoriArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:accessorio[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoAccessoriSicurezzaArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:accessorio_sicurezza[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="accessorio_short">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="ID"/>
+
+                    <xsd:element type="xsd:string" name="Codice"/>
+
+                    <xsd:element type="xsd:string" name="nome"/>
+
+                    <xsd:element type="xsd:string" name="descrizione"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoAccessoriShortArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:accessorio_short[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="modello_caravan">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="marca"/>
+
+                    <xsd:element type="xsd:string" name="marca_acronimo"/>
+
+                    <xsd:element type="xsd:string" name="codice_gruppo_storico"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_gruppo_storico"/>
+
+                    <xsd:element type="xsd:string" name="codice_serie_gamma"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_serie_gamma"/>
+
+                    <xsd:element type="xsd:string" name="codice_modello"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_modello"/>
+
+                    <xsd:element type="xsd:string" name="famiglia_descrizione"/>
+
+                    <xsd:element type="xsd:string" name="modello"/>
+
+                    <xsd:element type="xsd:string" name="allestimento"/>
+
+                    <xsd:element type="xsd:string" name="immagine"/>
+
+                    <xsd:element type="xsd:string" name="codice_costruttore"/>
+
+                    <xsd:element type="xsd:string" name="codice_eurotax"/>
+
+                    <xsd:element type="xsd:string" name="codice_motornet"/>
+
+                    <xsd:element type="xsd:string" name="inizio_produzione"/>
+
+                    <xsd:element type="xsd:string" name="fine_produzione"/>
+
+                    <xsd:element type="xsd:string" name="inizio_commercializzazione"/>
+
+                    <xsd:element type="xsd:string" name="fine_commercializzazione"/>
+
+                    <xsd:element type="xsd:string" name="prezzo_accessori"/>
+
+                    <xsd:element type="tns:elencoAccessoriShortArray" name="accessori_serie"/>
+
+                    <xsd:element type="tns:elencoAccessoriShortArray" name="accessori_optional"/>
+
+                    <xsd:element type="xsd:string" name="prezzo_listino"/>
+
+                    <xsd:element type="xsd:string" name="data_listino"/>
+
+                    <xsd:element type="xsd:string" name="altezza"/>
+
+                    <xsd:element type="xsd:string" name="lunghezza"/>
+
+                    <xsd:element type="xsd:string" name="larghezza"/>
+
+                    <xsd:element type="xsd:string" name="toilet"/>
+
+                    <xsd:element type="xsd:string" name="frigo"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_cucina"/>
+
+                    <xsd:element type="xsd:string" name="riscaldamento"/>
+
+                    <xsd:element type="xsd:string" name="aria_condizionata"/>
+
+                    <xsd:element type="xsd:string" name="peso"/>
+
+                    <xsd:element type="xsd:string" name="posti"/>
+
+                    <xsd:element type="xsd:string" name="posti_letto"/>
+
+                    <xsd:element type="xsd:string" name="numero_posti_letto_castello"/>
+
+                    <xsd:element type="xsd:string" name="numero_posti_letto_matrimoniale"/>
+
+                    <xsd:element type="xsd:string" name="numero_posti_letto_matrimoniale_francese"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="modello_camper">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="marca"/>
+
+                    <xsd:element type="xsd:string" name="marca_acronimo"/>
+
+                    <xsd:element type="xsd:string" name="codice_gruppo_storico"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_gruppo_storico"/>
+
+                    <xsd:element type="xsd:string" name="codice_serie_gamma"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_serie_gamma"/>
+
+                    <xsd:element type="xsd:string" name="codice_modello"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_modello"/>
+
+                    <xsd:element type="xsd:string" name="famiglia_descrizione"/>
+
+                    <xsd:element type="xsd:string" name="codice_categoria"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_categoria"/>
+
+                    <xsd:element type="xsd:string" name="condizioni_commerciali"/>
+
+                    <xsd:element type="xsd:string" name="modello"/>
+
+                    <xsd:element type="xsd:string" name="allestimento"/>
+
+                    <xsd:element type="xsd:string" name="immagine"/>
+
+                    <xsd:element type="xsd:string" name="codice_costruttore"/>
+
+                    <xsd:element type="xsd:string" name="codice_eurotax"/>
+
+                    <xsd:element type="xsd:string" name="codice_motornet"/>
+
+                    <xsd:element type="xsd:string" name="inizio_produzione"/>
+
+                    <xsd:element type="xsd:string" name="fine_produzione"/>
+
+                    <xsd:element type="xsd:string" name="inizio_commercializzazione"/>
+
+                    <xsd:element type="xsd:string" name="fine_commercializzazione"/>
+
+                    <xsd:element type="xsd:string" name="prezzo_accessori"/>
+
+                    <xsd:element type="tns:elencoAccessoriShortArray" name="accessori_serie"/>
+
+                    <xsd:element type="tns:elencoAccessoriShortArray" name="accessori_optional"/>
+
+                    <xsd:element type="xsd:string" name="prezzo_listino"/>
+
+                    <xsd:element type="xsd:string" name="data_listino"/>
+
+                    <xsd:element type="xsd:string" name="lunghezza"/>
+
+                    <xsd:element type="xsd:string" name="larghezza"/>
+
+                    <xsd:element type="xsd:string" name="larghezza_interna"/>
+
+                    <xsd:element type="xsd:string" name="toilet"/>
+
+                    <xsd:element type="xsd:string" name="frigo"/>
+
+                    <xsd:element type="xsd:string" name="riscaldamento"/>
+
+                    <xsd:element type="xsd:string" name="aria_condizionata"/>
+
+                    <xsd:element type="xsd:string" name="peso"/>
+
+                    <xsd:element type="xsd:string" name="peso_totale"/>
+
+                    <xsd:element type="xsd:string" name="posti"/>
+
+                    <xsd:element type="xsd:string" name="posti_letto"/>
+
+                    <xsd:element type="xsd:string" name="posti_aggiuntivi"/>
+
+                    <xsd:element type="xsd:string" name="numero_posti_letto_castello"/>
+
+                    <xsd:element type="xsd:string" name="numero_posti_letto_matrimoniale"/>
+
+                    <xsd:element type="xsd:string" name="numero_posti_letto_matrimoniale_francese"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_alimentazione"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_motorizzazione"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_cucina"/>
+
+                    <xsd:element type="xsd:string" name="altezza"/>
+
+                    <xsd:element type="xsd:string" name="cavalli"/>
+
+                    <xsd:element type="xsd:string" name="cavalli_fiscali"/>
+
+                    <xsd:element type="xsd:string" name="cilindrata"/>
+
+                    <xsd:element type="xsd:string" name="peso_potenza"/>
+
+                    <xsd:element type="xsd:string" name="massa_rimorchiabile"/>
+
+                    <xsd:element type="xsd:string" name="potenza"/>
+
+                    <xsd:element type="xsd:string" name="motorizzazione"/>
+
+                    <xsd:element type="xsd:string" name="marce"/>
+
+                    <xsd:element type="xsd:string" name="cambio"/>
+
+                    <xsd:element type="xsd:string" name="trazione"/>
+
+                    <xsd:element type="xsd:string" name="patente"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="modello_auto">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="marca"/>
+
+                    <xsd:element type="xsd:string" name="marca_acronimo"/>
+
+                    <xsd:element type="xsd:string" name="codice_gruppo_storico"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_gruppo_storico"/>
+
+                    <xsd:element type="xsd:string" name="codice_serie_gamma"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_serie_gamma"/>
+
+                    <xsd:element type="xsd:string" name="codice_modello"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_modello"/>
+
+                    <xsd:element type="xsd:string" name="cod_gamma_mod"/>
+
+                    <xsd:element type="xsd:string" name="modello"/>
+
+                    <xsd:element type="xsd:string" name="allestimento"/>
+
+                    <xsd:element type="xsd:string" name="immagine"/>
+
+                    <xsd:element type="xsd:string" name="codice_costruttore"/>
+
+                    <xsd:element type="xsd:string" name="codice_eurotax"/>
+
+                    <xsd:element type="xsd:string" name="codice_motornet"/>
+
+                    <xsd:element type="xsd:string" name="codice_motore"/>
+
+                    <xsd:element type="xsd:string" name="inizio_produzione"/>
+
+                    <xsd:element type="xsd:string" name="fine_produzione"/>
+
+                    <xsd:element type="xsd:string" name="prezzo_accessori"/>
+
+                    <xsd:element type="tns:elencoAccessoriShortArray" name="accessori_serie"/>
+
+                    <xsd:element type="tns:elencoAccessoriShortArray" name="accessori_optional"/>
+
+                    <xsd:element type="xsd:string" name="prezzo_listino"/>
+
+                    <xsd:element type="xsd:string" name="data_listino"/>
+
+                    <xsd:element type="xsd:string" name="tipo"/>
+
+                    <xsd:element type="xsd:string" name="tipo_descrizione"/>
+
+                    <xsd:element type="xsd:string" name="segmento"/>
+
+                    <xsd:element type="xsd:string" name="segmento_descrizione"/>
+
+                    <xsd:element type="xsd:string" name="codice_alimentazione"/>
+
+                    <xsd:element type="xsd:string" name="alimentazione"/>
+
+                    <xsd:element type="xsd:string" name="cilindrata"/>
+
+                    <xsd:element type="xsd:string" name="cavalli_fiscali"/>
+
+                    <xsd:element type="xsd:string" name="tipo_motore"/>
+
+                    <xsd:element type="xsd:string" name="desc_motore"/>
+
+                    <xsd:element type="xsd:string" name="hp"/>
+
+                    <xsd:element type="xsd:string" name="kw"/>
+
+                    <xsd:element type="xsd:string" name="euro"/>
+
+                    <xsd:element type="xsd:string" name="emissioni_co2"/>
+
+                    <xsd:element type="xsd:string" name="consumo_medio"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_cambio"/>
+
+                    <xsd:element type="xsd:string" name="codice_cambio"/>
+
+                    <xsd:element type="xsd:string" name="nome_cambio"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_marce"/>
+
+                    <xsd:element type="xsd:string" name="accelerazione"/>
+
+                    <xsd:element type="xsd:string" name="altezza"/>
+
+                    <xsd:element type="xsd:string" name="cilindri"/>
+
+                    <xsd:element type="xsd:string" name="consumo_urbano"/>
+
+                    <xsd:element type="xsd:string" name="consumo_extra_urbano"/>
+
+                    <xsd:element type="xsd:string" name="coppia"/>
+
+                    <xsd:element type="xsd:string" name="numero_giri"/>
+
+                    <xsd:element type="xsd:string" name="larghezza"/>
+
+                    <xsd:element type="xsd:string" name="lunghezza"/>
+
+                    <xsd:element type="xsd:string" name="pneumatici_anteriori"/>
+
+                    <xsd:element type="xsd:string" name="pneumatici_posteriori"/>
+
+                    <xsd:element type="xsd:string" name="valvole"/>
+
+                    <xsd:element type="xsd:string" name="velocita"/>
+
+                    <xsd:element type="xsd:string" name="passo"/>
+
+                    <xsd:element type="xsd:string" name="porte"/>
+
+                    <xsd:element type="xsd:string" name="posti"/>
+
+                    <xsd:element type="xsd:string" name="codice_trazione"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_trazione"/>
+
+                    <xsd:element type="xsd:string" name="altezza_minima"/>
+
+                    <xsd:element type="xsd:string" name="autonomia_media"/>
+
+                    <xsd:element type="xsd:string" name="autonomia_max"/>
+
+                    <xsd:element type="xsd:string" name="bagagliaio"/>
+
+                    <xsd:element type="xsd:string" name="cavalli_ibrido"/>
+
+                    <xsd:element type="xsd:string" name="cavalli_totale"/>
+
+                    <xsd:element type="xsd:string" name="potenza_ibrido"/>
+
+                    <xsd:element type="xsd:string" name="potenza_totale"/>
+
+                    <xsd:element type="xsd:string" name="coppia_ibrido"/>
+
+                    <xsd:element type="xsd:string" name="coppia_totale"/>
+
+                    <xsd:element type="xsd:string" name="equipaggiamento"/>
+
+                    <xsd:element type="xsd:string" name="garanzia_km"/>
+
+                    <xsd:element type="xsd:string" name="garanzia_tempo"/>
+
+                    <xsd:element type="xsd:string" name="guado"/>
+
+                    <xsd:element type="xsd:string" name="HC"/>
+
+                    <xsd:element type="xsd:string" name="neo_patentati"/>
+
+                    <xsd:element type="xsd:string" name="nox"/>
+
+                    <xsd:element type="xsd:string" name="numero_giri_ibrido"/>
+
+                    <xsd:element type="xsd:string" name="numero_giri_totale"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_architettura"/>
+
+                    <xsd:element type="xsd:string" name="codice_architettura"/>
+
+                    <xsd:element type="xsd:string" name="tempi_giacenza"/>
+
+                    <xsd:element type="xsd:string" name="tipo_batteria"/>
+
+                    <xsd:element type="xsd:string" name="traino"/>
+
+                    <xsd:element type="xsd:string" name="volumi"/>
+
+                    <xsd:element type="xsd:string" name="portata"/>
+
+                    <xsd:element type="xsd:string" name="posti_max"/>
+
+                    <xsd:element type="xsd:string" name="pm10"/>
+
+                    <xsd:element type="xsd:string" name="ricarica_standard"/>
+
+                    <xsd:element type="xsd:string" name="ricarica_veloce"/>
+
+                    <xsd:element type="xsd:string" name="ridotte"/>
+
+                    <xsd:element type="xsd:string" name="pendenza_max"/>
+
+                    <xsd:element type="xsd:string" name="peso_potenza"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_freni"/>
+
+                    <xsd:element type="xsd:string" name="codice_freni"/>
+
+                    <xsd:element type="xsd:string" name="peso"/>
+
+                    <xsd:element type="xsd:string" name="tipo_cons"/>
+
+                    <xsd:element type="xsd:string" name="emiss_urb"/>
+
+                    <xsd:element type="xsd:string" name="emiss_extraurb"/>
+
+                    <xsd:element type="xsd:string" name="tipo_guida"/>
+
+                    <xsd:element type="xsd:string" name="massa_p_carico"/>
+
+                    <xsd:element type="xsd:string" name="sosp_pneum"/>
+
+                    <xsd:element type="xsd:string" name="indice_carico"/>
+
+                    <xsd:element type="xsd:string" name="cod_vel"/>
+
+                    <xsd:element type="xsd:string" name="cap_serb_litri"/>
+
+                    <xsd:element type="xsd:string" name="cap_serb_kg"/>
+
+                    <xsd:element type="xsd:string" name="peso_vuoto"/>
+
+                    <xsd:element type="xsd:string" name="paese_prod"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="modello_auto_aggiuntivo">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="marca"/>
+
+                    <xsd:element type="xsd:string" name="marca_acronimo"/>
+
+                    <xsd:element type="xsd:string" name="codice_gruppo_storico"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_gruppo_storico"/>
+
+                    <xsd:element type="xsd:string" name="codice_serie_gamma"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_serie_gamma"/>
+
+                    <xsd:element type="xsd:string" name="codice_modello"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_modello"/>
+
+                    <xsd:element type="xsd:string" name="cod_gamma_mod"/>
+
+                    <xsd:element type="xsd:string" name="modello"/>
+
+                    <xsd:element type="xsd:string" name="allestimento"/>
+
+                    <xsd:element type="xsd:string" name="immagine"/>
+
+                    <xsd:element type="xsd:string" name="codice_costruttore"/>
+
+                    <xsd:element type="xsd:string" name="codice_eurotax"/>
+
+                    <xsd:element type="xsd:string" name="codice_motornet"/>
+
+                    <xsd:element type="xsd:string" name="codice_motore"/>
+
+                    <xsd:element type="xsd:string" name="inizio_produzione"/>
+
+                    <xsd:element type="xsd:string" name="fine_produzione"/>
+
+                    <xsd:element type="xsd:string" name="prezzo_accessori"/>
+
+                    <xsd:element type="tns:elencoAccessoriShortArray" name="accessori_serie"/>
+
+                    <xsd:element type="tns:elencoAccessoriShortArray" name="accessori_optional"/>
+
+                    <xsd:element type="xsd:string" name="prezzo_listino"/>
+
+                    <xsd:element type="xsd:string" name="data_listino"/>
+
+                    <xsd:element type="xsd:string" name="tipo"/>
+
+                    <xsd:element type="xsd:string" name="tipo_descrizione"/>
+
+                    <xsd:element type="xsd:string" name="segmento"/>
+
+                    <xsd:element type="xsd:string" name="segmento_descrizione"/>
+
+                    <xsd:element type="xsd:string" name="codice_alimentazione"/>
+
+                    <xsd:element type="xsd:string" name="alimentazione"/>
+
+                    <xsd:element type="xsd:string" name="cilindrata"/>
+
+                    <xsd:element type="xsd:string" name="cavalli_fiscali"/>
+
+                    <xsd:element type="xsd:string" name="tipo_motore"/>
+
+                    <xsd:element type="xsd:string" name="desc_motore"/>
+
+                    <xsd:element type="xsd:string" name="hp"/>
+
+                    <xsd:element type="xsd:string" name="kw"/>
+
+                    <xsd:element type="xsd:string" name="euro"/>
+
+                    <xsd:element type="xsd:string" name="emissioni_co2"/>
+
+                    <xsd:element type="xsd:string" name="consumo_medio"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_cambio"/>
+
+                    <xsd:element type="xsd:string" name="codice_cambio"/>
+
+                    <xsd:element type="xsd:string" name="nome_cambio"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_marce"/>
+
+                    <xsd:element type="xsd:string" name="accelerazione"/>
+
+                    <xsd:element type="xsd:string" name="altezza"/>
+
+                    <xsd:element type="xsd:string" name="cilindri"/>
+
+                    <xsd:element type="xsd:string" name="consumo_urbano"/>
+
+                    <xsd:element type="xsd:string" name="consumo_extra_urbano"/>
+
+                    <xsd:element type="xsd:string" name="coppia"/>
+
+                    <xsd:element type="xsd:string" name="numero_giri"/>
+
+                    <xsd:element type="xsd:string" name="larghezza"/>
+
+                    <xsd:element type="xsd:string" name="lunghezza"/>
+
+                    <xsd:element type="xsd:string" name="pneumatici_anteriori"/>
+
+                    <xsd:element type="xsd:string" name="pneumatici_posteriori"/>
+
+                    <xsd:element type="xsd:string" name="valvole"/>
+
+                    <xsd:element type="xsd:string" name="velocita"/>
+
+                    <xsd:element type="xsd:string" name="passo"/>
+
+                    <xsd:element type="xsd:string" name="porte"/>
+
+                    <xsd:element type="xsd:string" name="posti"/>
+
+                    <xsd:element type="xsd:string" name="codice_trazione"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_trazione"/>
+
+                    <xsd:element type="xsd:string" name="altezza_minima"/>
+
+                    <xsd:element type="xsd:string" name="autonomia_media"/>
+
+                    <xsd:element type="xsd:string" name="autonomia_max"/>
+
+                    <xsd:element type="xsd:string" name="bagagliaio"/>
+
+                    <xsd:element type="xsd:string" name="cavalli_ibrido"/>
+
+                    <xsd:element type="xsd:string" name="cavalli_totale"/>
+
+                    <xsd:element type="xsd:string" name="potenza_ibrido"/>
+
+                    <xsd:element type="xsd:string" name="potenza_totale"/>
+
+                    <xsd:element type="xsd:string" name="coppia_ibrido"/>
+
+                    <xsd:element type="xsd:string" name="coppia_totale"/>
+
+                    <xsd:element type="xsd:string" name="equipaggiamento"/>
+
+                    <xsd:element type="xsd:string" name="garanzia_km"/>
+
+                    <xsd:element type="xsd:string" name="garanzia_tempo"/>
+
+                    <xsd:element type="xsd:string" name="guado"/>
+
+                    <xsd:element type="xsd:string" name="HC"/>
+
+                    <xsd:element type="xsd:string" name="neo_patentati"/>
+
+                    <xsd:element type="xsd:string" name="nox"/>
+
+                    <xsd:element type="xsd:string" name="numero_giri_ibrido"/>
+
+                    <xsd:element type="xsd:string" name="numero_giri_totale"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_architettura"/>
+
+                    <xsd:element type="xsd:string" name="codice_architettura"/>
+
+                    <xsd:element type="xsd:string" name="tempi_giacenza"/>
+
+                    <xsd:element type="xsd:string" name="tipo_batteria"/>
+
+                    <xsd:element type="xsd:string" name="traino"/>
+
+                    <xsd:element type="xsd:string" name="volumi"/>
+
+                    <xsd:element type="xsd:string" name="portata"/>
+
+                    <xsd:element type="xsd:string" name="posti_max"/>
+
+                    <xsd:element type="xsd:string" name="pm10"/>
+
+                    <xsd:element type="xsd:string" name="ricarica_standard"/>
+
+                    <xsd:element type="xsd:string" name="ricarica_veloce"/>
+
+                    <xsd:element type="xsd:string" name="ridotte"/>
+
+                    <xsd:element type="xsd:string" name="pendenza_max"/>
+
+                    <xsd:element type="xsd:string" name="peso_potenza"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_freni"/>
+
+                    <xsd:element type="xsd:string" name="codice_freni"/>
+
+                    <xsd:element type="xsd:string" name="peso"/>
+
+                    <xsd:element type="xsd:string" name="tipo_cons"/>
+
+                    <xsd:element type="xsd:string" name="emiss_urb"/>
+
+                    <xsd:element type="xsd:string" name="emiss_extraurb"/>
+
+                    <xsd:element type="xsd:string" name="tipo_guida"/>
+
+                    <xsd:element type="xsd:string" name="massa_p_carico"/>
+
+                    <xsd:element type="xsd:string" name="sosp_pneum"/>
+
+                    <xsd:element type="xsd:string" name="indice_carico"/>
+
+                    <xsd:element type="xsd:string" name="cod_vel"/>
+
+                    <xsd:element type="xsd:string" name="cap_serb_litri"/>
+
+                    <xsd:element type="xsd:string" name="cap_serb_kg"/>
+
+                    <xsd:element type="xsd:string" name="peso_vuoto"/>
+
+                    <xsd:element type="xsd:string" name="paese_prod"/>
+
+                    <xsd:element type="xsd:string" name="nome_allestimento"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_breve"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_modello_breve"/>
+
+                    <xsd:element type="xsd:string" name="nome_carrozzeria"/>
+
+                    <xsd:element type="xsd:string" name="sigla_cilindrata"/>
+
+                    <xsd:element type="xsd:string" name="nome_trazione"/>
+
+                    <xsd:element type="xsd:string" name="nome_motore"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_arricchimento"/>
+
+                    <xsd:element type="xsd:string" name="codice_categoria"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_categoria"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="modello_moto">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="marca"/>
+
+                    <xsd:element type="xsd:string" name="marca_acronimo"/>
+
+                    <xsd:element type="xsd:string" name="codice_gruppo_storico"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_gruppo_storico"/>
+
+                    <xsd:element type="xsd:string" name="codice_serie_gamma"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_serie_gamma"/>
+
+                    <xsd:element type="xsd:string" name="codice_modello"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_modello"/>
+
+                    <xsd:element type="xsd:string" name="cod_gamma_mod"/>
+
+                    <xsd:element type="xsd:string" name="desc_gamma_mod"/>
+
+                    <xsd:element type="xsd:string" name="allestimento"/>
+
+                    <xsd:element type="xsd:string" name="immagine"/>
+
+                    <xsd:element type="xsd:string" name="codice_costruttore"/>
+
+                    <xsd:element type="xsd:string" name="codice_eurotax"/>
+
+                    <xsd:element type="xsd:string" name="codice_motornet"/>
+
+                    <xsd:element type="xsd:string" name="codice_motore"/>
+
+                    <xsd:element type="xsd:string" name="prezzo_accessori"/>
+
+                    <xsd:element type="tns:elencoAccessoriShortArray" name="accessori_serie"/>
+
+                    <xsd:element type="tns:elencoAccessoriShortArray" name="accessori_optional"/>
+
+                    <xsd:element type="xsd:string" name="prezzo_listino"/>
+
+                    <xsd:element type="xsd:string" name="data_listino"/>
+
+                    <xsd:element type="xsd:string" name="inizio_produzione"/>
+
+                    <xsd:element type="xsd:string" name="fine_produzione"/>
+
+                    <xsd:element type="xsd:string" name="tipo"/>
+
+                    <xsd:element type="xsd:string" name="tipo_descrizione"/>
+
+                    <xsd:element type="xsd:string" name="segmento"/>
+
+                    <xsd:element type="xsd:string" name="segmento_descrizione"/>
+
+                    <xsd:element type="xsd:string" name="cilindrata"/>
+
+                    <xsd:element type="xsd:string" name="cavalli_fiscali"/>
+
+                    <xsd:element type="xsd:string" name="tipo_motore"/>
+
+                    <xsd:element type="xsd:string" name="desc_motore"/>
+
+                    <xsd:element type="xsd:string" name="hp"/>
+
+                    <xsd:element type="xsd:string" name="kw"/>
+
+                    <xsd:element type="xsd:string" name="euro"/>
+
+                    <xsd:element type="xsd:string" name="emissioni_co2"/>
+
+                    <xsd:element type="xsd:string" name="consumo_medio"/>
+
+                    <xsd:element type="xsd:string" name="codice_alimentazione"/>
+
+                    <xsd:element type="xsd:string" name="alimentazione"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_cambio"/>
+
+                    <xsd:element type="xsd:string" name="codice_cambio"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_marce"/>
+
+                    <xsd:element type="xsd:string" name="accelerazione"/>
+
+                    <xsd:element type="xsd:string" name="altezza"/>
+
+                    <xsd:element type="xsd:string" name="cilindri"/>
+
+                    <xsd:element type="xsd:string" name="consumo_urbano"/>
+
+                    <xsd:element type="xsd:string" name="consumo_extra_urbano"/>
+
+                    <xsd:element type="xsd:string" name="coppia"/>
+
+                    <xsd:element type="xsd:string" name="numero_giri"/>
+
+                    <xsd:element type="xsd:string" name="larghezza"/>
+
+                    <xsd:element type="xsd:string" name="lunghezza"/>
+
+                    <xsd:element type="xsd:string" name="pneumatici_anteriori"/>
+
+                    <xsd:element type="xsd:string" name="pneumatici_posteriori"/>
+
+                    <xsd:element type="xsd:string" name="valvole"/>
+
+                    <xsd:element type="xsd:string" name="velocita"/>
+
+                    <xsd:element type="xsd:string" name="indice_carico"/>
+
+                    <xsd:element type="xsd:string" name="cod_vel"/>
+
+                    <xsd:element type="xsd:string" name="passo"/>
+
+                    <xsd:element type="xsd:string" name="paese_prod"/>
+
+                    <xsd:element type="xsd:string" name="codice_freni"/>
+
+                    <xsd:element type="xsd:string" name="codice_avviamento"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_avviamento"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_distribuzione"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_frizione"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_forcella"/>
+
+                    <xsd:element type="xsd:string" name="codice_raffreddamento"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_raffreddamento"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_sospensioni"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_telaio"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_materialetelaio"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_tempi"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_trasmissione"/>
+
+                    <xsd:element type="xsd:string" name="altezza_terra"/>
+
+                    <xsd:element type="xsd:string" name="altezza_sella"/>
+
+                    <xsd:element type="xsd:string" name="alesaggio"/>
+
+                    <xsd:element type="xsd:string" name="capacita_olio"/>
+
+                    <xsd:element type="xsd:string" name="canotto"/>
+
+                    <xsd:element type="xsd:string" name="compressione"/>
+
+                    <xsd:element type="xsd:string" name="interasse"/>
+
+                    <xsd:element type="xsd:string" name="peso"/>
+
+                    <xsd:element type="xsd:string" name="peso_secco"/>
+
+                    <xsd:element type="xsd:string" name="portata"/>
+
+                    <xsd:element type="xsd:string" name="serbatoio"/>
+
+                    <xsd:element type="xsd:string" name="abs"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="modello_vcom_vind">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="marca"/>
+
+                    <xsd:element type="xsd:string" name="marca_acronimo"/>
+
+                    <xsd:element type="xsd:string" name="codice_gruppo_storico"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_gruppo_storico"/>
+
+                    <xsd:element type="xsd:string" name="codice_serie_gamma"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_serie_gamma"/>
+
+                    <xsd:element type="xsd:string" name="codice_modello"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_modello"/>
+
+                    <xsd:element type="xsd:string" name="cod_gamma_mod"/>
+
+                    <xsd:element type="xsd:string" name="desc_gamma_mod"/>
+
+                    <xsd:element type="xsd:string" name="allestimento"/>
+
+                    <xsd:element type="xsd:string" name="immagine"/>
+
+                    <xsd:element type="xsd:string" name="codice_costruttore"/>
+
+                    <xsd:element type="xsd:string" name="codice_eurotax"/>
+
+                    <xsd:element type="xsd:string" name="codice_motornet"/>
+
+                    <xsd:element type="xsd:string" name="codice_motore"/>
+
+                    <xsd:element type="xsd:string" name="autocarro"/>
+
+                    <xsd:element type="xsd:string" name="inizio_produzione"/>
+
+                    <xsd:element type="xsd:string" name="fine_produzione"/>
+
+                    <xsd:element type="xsd:string" name="alimentazione"/>
+
+                    <xsd:element type="xsd:string" name="prezzo_accessori"/>
+
+                    <xsd:element type="tns:elencoAccessoriShortArray" name="accessori_serie"/>
+
+                    <xsd:element type="tns:elencoAccessoriShortArray" name="accessori_optional"/>
+
+                    <xsd:element type="xsd:string" name="prezzo_listino"/>
+
+                    <xsd:element type="xsd:string" name="data_listino"/>
+
+                    <xsd:element type="xsd:string" name="tipo"/>
+
+                    <xsd:element type="xsd:string" name="tipo_descrizione"/>
+
+                    <xsd:element type="xsd:string" name="segmento"/>
+
+                    <xsd:element type="xsd:string" name="segmento_descrizione"/>
+
+                    <xsd:element type="xsd:string" name="cilindrata"/>
+
+                    <xsd:element type="xsd:string" name="cavalli_fiscali"/>
+
+                    <xsd:element type="xsd:string" name="tipo_motore"/>
+
+                    <xsd:element type="xsd:string" name="hp"/>
+
+                    <xsd:element type="xsd:string" name="kw"/>
+
+                    <xsd:element type="xsd:string" name="euro"/>
+
+                    <xsd:element type="xsd:string" name="emissioni_co2"/>
+
+                    <xsd:element type="xsd:string" name="consumo_medio"/>
+
+                    <xsd:element type="xsd:string" name="codice_alimentazione"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_cambio"/>
+
+                    <xsd:element type="xsd:string" name="codice_cambio"/>
+
+                    <xsd:element type="xsd:string" name="nome_cambio"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_marce"/>
+
+                    <xsd:element type="xsd:string" name="accelerazione"/>
+
+                    <xsd:element type="xsd:string" name="altezza"/>
+
+                    <xsd:element type="xsd:string" name="cilindri"/>
+
+                    <xsd:element type="xsd:string" name="consumo_urbano"/>
+
+                    <xsd:element type="xsd:string" name="consumo_extra_urbano"/>
+
+                    <xsd:element type="xsd:string" name="coppia"/>
+
+                    <xsd:element type="xsd:string" name="numero_giri"/>
+
+                    <xsd:element type="xsd:string" name="larghezza"/>
+
+                    <xsd:element type="xsd:string" name="lunghezza"/>
+
+                    <xsd:element type="xsd:string" name="pneumatici_anteriori"/>
+
+                    <xsd:element type="xsd:string" name="pneumatici_posteriori"/>
+
+                    <xsd:element type="xsd:string" name="valvole"/>
+
+                    <xsd:element type="xsd:string" name="velocita"/>
+
+                    <xsd:element type="xsd:string" name="passo"/>
+
+                    <xsd:element type="xsd:string" name="porte"/>
+
+                    <xsd:element type="xsd:string" name="posti"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_trazione"/>
+
+                    <xsd:element type="xsd:string" name="codice_trazione"/>
+
+                    <xsd:element type="xsd:string" name="altezza_minima"/>
+
+                    <xsd:element type="xsd:string" name="autonomia_media"/>
+
+                    <xsd:element type="xsd:string" name="autonomia_max"/>
+
+                    <xsd:element type="xsd:string" name="bagagliaio"/>
+
+                    <xsd:element type="xsd:string" name="cavalli_ibrido"/>
+
+                    <xsd:element type="xsd:string" name="cavalli_totale"/>
+
+                    <xsd:element type="xsd:string" name="coppia_ibrido"/>
+
+                    <xsd:element type="xsd:string" name="coppia_totale"/>
+
+                    <xsd:element type="xsd:string" name="equipaggiamento"/>
+
+                    <xsd:element type="xsd:string" name="garanzia_km"/>
+
+                    <xsd:element type="xsd:string" name="garanzia_tempo"/>
+
+                    <xsd:element type="xsd:string" name="guado"/>
+
+                    <xsd:element type="xsd:string" name="HC"/>
+
+                    <xsd:element type="xsd:string" name="neo_patentati"/>
+
+                    <xsd:element type="xsd:string" name="nox"/>
+
+                    <xsd:element type="xsd:string" name="numero_giri_ibrido"/>
+
+                    <xsd:element type="xsd:string" name="numero_giri_totale"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_architettura"/>
+
+                    <xsd:element type="xsd:string" name="codice_architettura"/>
+
+                    <xsd:element type="xsd:string" name="tempi_giacenza"/>
+
+                    <xsd:element type="xsd:string" name="tipo_batteria"/>
+
+                    <xsd:element type="xsd:string" name="traino"/>
+
+                    <xsd:element type="xsd:string" name="volumi"/>
+
+                    <xsd:element type="xsd:string" name="potenza_ibrido"/>
+
+                    <xsd:element type="xsd:string" name="potenza_totale"/>
+
+                    <xsd:element type="xsd:string" name="portata"/>
+
+                    <xsd:element type="xsd:string" name="posti_max"/>
+
+                    <xsd:element type="xsd:string" name="pm10"/>
+
+                    <xsd:element type="xsd:string" name="ricarica_standard"/>
+
+                    <xsd:element type="xsd:string" name="ricarica_veloce"/>
+
+                    <xsd:element type="xsd:string" name="ridotte"/>
+
+                    <xsd:element type="xsd:string" name="pendenza_max"/>
+
+                    <xsd:element type="xsd:string" name="peso_potenza"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_freni"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_freni_ant"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_freni_post"/>
+
+                    <xsd:element type="xsd:string" name="codice_freni"/>
+
+                    <xsd:element type="xsd:string" name="codice_freni_ant"/>
+
+                    <xsd:element type="xsd:string" name="codice_freni_post"/>
+
+                    <xsd:element type="xsd:string" name="peso"/>
+
+                    <xsd:element type="xsd:string" name="passo_asse"/>
+
+                    <xsd:element type="xsd:string" name="assi_ant"/>
+
+                    <xsd:element type="xsd:string" name="assi_post"/>
+
+                    <xsd:element type="xsd:string" name="assi_totale"/>
+
+                    <xsd:element type="xsd:string" name="numero_ruote"/>
+
+                    <xsd:element type="xsd:string" name="peso_rimorchiabile"/>
+
+                    <xsd:element type="xsd:string" name="peso_vuoto"/>
+
+                    <xsd:element type="xsd:string" name="peso_vuoto_conducente"/>
+
+                    <xsd:element type="xsd:string" name="peso_totale_terra"/>
+
+                    <xsd:element type="xsd:string" name="PTCMTC"/>
+
+                    <xsd:element type="xsd:string" name="pneumatici_anterioriCosto"/>
+
+                    <xsd:element type="xsd:string" name="pneumatici_posterioriCosto"/>
+
+                    <xsd:element type="xsd:string" name="sospensioni"/>
+
+                    <xsd:element type="xsd:string" name="tipo_cons"/>
+
+                    <xsd:element type="xsd:string" name="emiss_urb"/>
+
+                    <xsd:element type="xsd:string" name="emiss_extraurb"/>
+
+                    <xsd:element type="xsd:string" name="tipo_guida"/>
+
+                    <xsd:element type="xsd:string" name="sosp_pneum"/>
+
+                    <xsd:element type="xsd:string" name="tipo_tetto"/>
+
+                    <xsd:element type="xsd:string" name="tipo_ruote_p"/>
+
+                    <xsd:element type="xsd:string" name="indice_carico"/>
+
+                    <xsd:element type="xsd:string" name="cod_vel"/>
+
+                    <xsd:element type="xsd:string" name="cap_serb_litri"/>
+
+                    <xsd:element type="xsd:string" name="cap_serb_kg"/>
+
+                    <xsd:element type="xsd:string" name="paese_prod"/>
+
+                    <xsd:element type="xsd:string" name="desc_motore"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="riparazione">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="nome"/>
+
+                    <xsd:element type="xsd:string" name="ore"/>
+
+                    <xsd:element type="xsd:string" name="prezzo"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoRiparazioniArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:riparazione[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="accessorio_valutazione">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="ID"/>
+
+                    <xsd:element type="xsd:string" name="AccCodUff"/>
+
+                    <xsd:element type="xsd:string" name="AccDescUff"/>
+
+                    <xsd:element type="xsd:string" name="AccCodNorm"/>
+
+                    <xsd:element type="xsd:string" name="AccDescNorm"/>
+
+                    <xsd:element type="xsd:string" name="AccCodMot"/>
+
+                    <xsd:element type="xsd:string" name="AccDescMot"/>
+
+                    <xsd:element type="xsd:string" name="AccCodGruppo"/>
+
+                    <xsd:element type="xsd:string" name="AccDescGruppo"/>
+
+                    <xsd:element type="xsd:string" name="AccIdDizionario"/>
+
+                    <xsd:element type="xsd:string" name="Prezzo"/>
+
+                    <xsd:element type="xsd:string" name="AccPrListino"/>
+
+                    <xsd:element type="xsd:string" name="AccDataListino"/>
+
+                    <xsd:element type="xsd:string" name="Macrogruppo"/>
+
+                    <xsd:element type="xsd:string" name="CodMacrogruppo"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoAccessoriValutazioneArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:accessorio_valutazione[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="valutazione">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="codice_omologazione"/>
+
+                    <xsd:element type="xsd:string" name="targa"/>
+
+                    <xsd:element type="xsd:string" name="telaio"/>
+
+                    <xsd:element type="xsd:string" name="marca"/>
+
+                    <xsd:element type="xsd:string" name="modello"/>
+
+                    <xsd:element type="xsd:string" name="allestimento"/>
+
+                    <xsd:element type="xsd:string" name="anno"/>
+
+                    <xsd:element type="xsd:string" name="mese"/>
+
+                    <xsd:element type="xsd:string" name="km"/>
+
+                    <xsd:element type="xsd:string" name="autocarro"/>
+
+                    <xsd:element type="xsd:string" name="immagine"/>
+
+                    <xsd:element type="xsd:string" name="codice_eurotax"/>
+
+                    <xsd:element type="xsd:string" name="codice_motornet"/>
+
+                    <xsd:element type="xsd:string" name="codice_motore"/>
+
+                    <xsd:element type="xsd:string" name="alimentazione"/>
+
+                    <xsd:element type="xsd:string" name="quotazione_eurotax_blu"/>
+
+                    <xsd:element type="xsd:string" name="quotazione_eurotax_blu_km"/>
+
+                    <xsd:element type="xsd:string" name="quotazione_eurotax_blu_totale"/>
+
+                    <xsd:element type="xsd:string" name="quotazione_eurotax_giallo"/>
+
+                    <xsd:element type="xsd:string" name="quotazione_eurotax_giallo_km"/>
+
+                    <xsd:element type="xsd:string" name="quotazione_eurotax_giallo_totale"/>
+
+                    <xsd:element type="xsd:string" name="variazione_km"/>
+
+                    <xsd:element type="xsd:string" name="variazione_personalizzata"/>
+
+                    <xsd:element type="xsd:string" name="valutazione_dealer"/>
+
+                    <xsd:element type="xsd:string" name="percorrenza_media_km"/>
+
+                    <xsd:element type="xsd:string" name="data_immatricolazione"/>
+
+                    <xsd:element type="xsd:string" name="prezzo_accessori"/>
+
+                    <xsd:element type="tns:elencoAccessoriValutazioneArray" name="accessori_serie"/>
+
+                    <xsd:element type="tns:elencoAccessoriValutazioneArray" name="accessori_optional"/>
+
+                    <xsd:element type="xsd:string" name="prezzo_listino"/>
+
+                    <xsd:element type="tns:elencoRiparazioniArray" name="riparazioni_carrozzeria"/>
+
+                    <xsd:element type="xsd:string" name="totale_riparazioni_carrozzeria"/>
+
+                    <xsd:element type="xsd:string" name="costo_orario_manodopera_carrozzeria"/>
+
+                    <xsd:element type="tns:elencoRiparazioniArray" name="riparazioni_meccanica"/>
+
+                    <xsd:element type="xsd:string" name="totale_riparazioni_meccanica"/>
+
+                    <xsd:element type="xsd:string" name="costo_orario_manodopera_meccanica"/>
+
+                    <xsd:element type="xsd:string" name="ediz_dati"/>
+
+                    <xsd:element type="xsd:string" name="xml"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="veicolo">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="codice_motornet"/>
+
+                    <xsd:element type="xsd:string" name="codice_eurotax"/>
+
+                    <xsd:element type="xsd:string" name="marca"/>
+
+                    <xsd:element type="xsd:string" name="marca_acronimo"/>
+
+                    <xsd:element type="xsd:string" name="modello_codice"/>
+
+                    <xsd:element type="xsd:string" name="versione"/>
+
+                    <xsd:element type="xsd:string" name="tipo"/>
+
+                    <xsd:element type="xsd:string" name="passo"/>
+
+                    <xsd:element type="xsd:string" name="prezzo_vendita"/>
+
+                    <xsd:element type="xsd:string" name="da"/>
+
+                    <xsd:element type="xsd:string" name="a"/>
+
+                    <xsd:element type="xsd:string" name="inizio_produzione"/>
+
+                    <xsd:element type="xsd:string" name="fine_produzione"/>
+
+                    <xsd:element type="xsd:string" name="porte"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="veicoloRen">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="codice_motornet"/>
+
+                    <xsd:element type="xsd:string" name="codice_eurotax"/>
+
+                    <xsd:element type="xsd:string" name="codice_costruttore"/>
+
+                    <xsd:element type="xsd:string" name="marca"/>
+
+                    <xsd:element type="xsd:string" name="marca_acronimo"/>
+
+                    <xsd:element type="xsd:string" name="cod_gamma_mod"/>
+
+                    <xsd:element type="xsd:string" name="versione"/>
+
+                    <xsd:element type="xsd:string" name="tipo"/>
+
+                    <xsd:element type="xsd:string" name="tipo_veicolo"/>
+
+                    <xsd:element type="xsd:string" name="passo"/>
+
+                    <xsd:element type="xsd:string" name="prezzo_vendita"/>
+
+                    <xsd:element type="xsd:string" name="da"/>
+
+                    <xsd:element type="xsd:string" name="a"/>
+
+                    <xsd:element type="xsd:string" name="inizio_produzione"/>
+
+                    <xsd:element type="xsd:string" name="fine_produzione"/>
+
+                    <xsd:element type="xsd:string" name="porte"/>
+
+                    <xsd:element type="xsd:string" name="nome_allestimento"/>
+
+                    <xsd:element type="xsd:string" name="codice_alimentazione"/>
+
+                    <xsd:element type="xsd:string" name="alimentazione"/>
+
+                    <xsd:element type="xsd:string" name="codice_cambio"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_cambio"/>
+
+                    <xsd:element type="xsd:string" name="data_listino"/>
+
+                    <xsd:element type="xsd:string" name="cavalli_fiscali"/>
+
+                    <xsd:element type="xsd:string" name="hp"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="veicoloInterno">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="codice_motornet"/>
+
+                    <xsd:element type="xsd:string" name="codice_eurotax"/>
+
+                    <xsd:element type="xsd:string" name="codice_costruttore"/>
+
+                    <xsd:element type="xsd:string" name="marca"/>
+
+                    <xsd:element type="xsd:string" name="marca_acronimo"/>
+
+                    <xsd:element type="xsd:string" name="modello_codice"/>
+
+                    <xsd:element type="xsd:string" name="versione"/>
+
+                    <xsd:element type="xsd:string" name="tipo"/>
+
+                    <xsd:element type="xsd:string" name="tipo_veicolo"/>
+
+                    <xsd:element type="xsd:string" name="passo"/>
+
+                    <xsd:element type="xsd:string" name="prezzo_vendita"/>
+
+                    <xsd:element type="xsd:string" name="da"/>
+
+                    <xsd:element type="xsd:string" name="a"/>
+
+                    <xsd:element type="xsd:string" name="inizio_produzione"/>
+
+                    <xsd:element type="xsd:string" name="fine_produzione"/>
+
+                    <xsd:element type="xsd:string" name="porte"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoVeicoliArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:veicolo[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoVeicoliRenArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:veicoloRen[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoVeicoliInternoArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:veicoloInterno[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="marcaVeicoloArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:marca[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getGruppiStoriciResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:elencoGruppiStoriciArray" name="gruppi_storici"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoGruppiStoriciArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:gruppo_storico[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="gruppo_storico">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="codice_gruppo_storico"/>
+
+                    <xsd:element type="xsd:string" name="descrizione_gruppo_storico"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="file">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="url"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoFileArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:file[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getRivalutazioneResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:elencoFileArray" name="elenco"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getDettaglioAutoWLTPResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:elencoWLTPArray" name="elenco"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="elencoWLTPArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:wltp[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="wltp">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="DirettivaEuro"/>
+
+                    <xsd:element type="xsd:string" name="CO2Combinato"/>
+
+                    <xsd:element type="xsd:string" name="CO2CombinatoMax"/>
+
+                    <xsd:element type="xsd:string" name="ConsumoCombinato"/>
+
+                    <xsd:element type="xsd:string" name="ConsumoCombinatoMax"/>
+
+                    <xsd:element type="xsd:string" name="PotenzaConsumataCombinato"/>
+
+                    <xsd:element type="xsd:string" name="PotenzaConsumataCombinatoMax"/>
+
+                    <xsd:element type="xsd:string" name="GasConsumoCombinato"/>
+
+                    <xsd:element type="xsd:string" name="GasConsumoCombinatoMax"/>
+
+                    <xsd:element type="xsd:string" name="AutomoniaSoloElettricoCombinato"/>
+
+                    <xsd:element type="xsd:string" name="AutomoniaSoloElettricoUrbano"/>
+
+                    <xsd:element type="xsd:string" name="ConsumoRegimeBasso"/>
+
+                    <xsd:element type="xsd:string" name="ConsumoRegimeBassoMax"/>
+
+                    <xsd:element type="xsd:string" name="ConsumoRegimeMedio"/>
+
+                    <xsd:element type="xsd:string" name="ConsumoRegimeMedioMax"/>
+
+                    <xsd:element type="xsd:string" name="ConsumoRegimeAlto"/>
+
+                    <xsd:element type="xsd:string" name="ConsumoRegimeAltoMax"/>
+
+                    <xsd:element type="xsd:string" name="ConsumoRegimeExtraAlto"/>
+
+                    <xsd:element type="xsd:string" name="ConsumoRegimeExtraAltoMax"/>
+
+                    <xsd:element type="xsd:string" name="ConsumoGasRegimeBasso"/>
+
+                    <xsd:element type="xsd:string" name="ConsumoGasRegimeBassoMax"/>
+
+                    <xsd:element type="xsd:string" name="ConsumoGasRegimeMedio"/>
+
+                    <xsd:element type="xsd:string" name="ConsumoGasRegimeMedioMax"/>
+
+                    <xsd:element type="xsd:string" name="ConsumoGasRegimeAlto"/>
+
+                    <xsd:element type="xsd:string" name="ConsumoGasRegimeAltoMax"/>
+
+                    <xsd:element type="xsd:string" name="ConsumoGasRegimeExtraAlto"/>
+
+                    <xsd:element type="xsd:string" name="ConsumoGasRegimeExtraAltoMax"/>
+
+                    <xsd:element type="xsd:string" name="DataInizioValidita"/>
+
+                    <xsd:element type="xsd:string" name="DataFineValidita"/>
+
+                    <xsd:element type="xsd:string" name="CO2RegimeBasso"/>
+
+                    <xsd:element type="xsd:string" name="CO2RegimeBassoMax"/>
+
+                    <xsd:element type="xsd:string" name="CO2RegimeMedio"/>
+
+                    <xsd:element type="xsd:string" name="CO2RegimeMedioMax"/>
+
+                    <xsd:element type="xsd:string" name="CO2RegimeAlto"/>
+
+                    <xsd:element type="xsd:string" name="CO2RegimeAltoMax"/>
+
+                    <xsd:element type="xsd:string" name="CO2RegimeExtraAlto"/>
+
+                    <xsd:element type="xsd:string" name="CO2RegimeExtraAltoMax"/>
+
+                    <xsd:element type="xsd:string" name="CO2GasCombinato"/>
+
+                    <xsd:element type="xsd:string" name="CO2GasCombinatoMax"/>
+
+                    <xsd:element type="xsd:string" name="CO2GasRegimeBasso"/>
+
+                    <xsd:element type="xsd:string" name="CO2GasRegimeBassoMax"/>
+
+                    <xsd:element type="xsd:string" name="CO2GasRegimeMedio"/>
+
+                    <xsd:element type="xsd:string" name="CO2GasRegimeMedioMax"/>
+
+                    <xsd:element type="xsd:string" name="CO2GasRegimeAlto"/>
+
+                    <xsd:element type="xsd:string" name="CO2GasRegimeAltoMax"/>
+
+                    <xsd:element type="xsd:string" name="CO2GasRegimeExtraAlto"/>
+
+                    <xsd:element type="xsd:string" name="CO2GasRegimeExtraAltoMax"/>
+
+                    <xsd:element type="xsd:string" name="AutomoniaSoloElettricoCombinatoFullOptional"/>
+
+                    <xsd:element type="xsd:string" name="AutomoniaSoloElettricoUrbanoFullOptional"/>
+
+                    <xsd:element type="xsd:string" name="codice_motornet"/>
+
+                    <xsd:element type="xsd:string" name="codice_eurotax"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getDettaglioVcomWLTPResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:elencoWLTPArray" name="elenco"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="getDettaglioElettricoResult">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="tns:dettaglioElettricoArray" name="dettaglio"/>
+
+                    <xsd:element type="xsd:string" name="message"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="dettaglioElettricoArray">
+
+
+                
+                <xsd:complexContent>
+
+
+                    
+                    <xsd:restriction base="SOAP-ENC:Array">
+
+                        <xsd:attribute wsdl:arrayType="tns:dettaglio[]" ref="SOAP-ENC:arrayType"/>
+
+                    </xsd:restriction>
+
+                </xsd:complexContent>
+
+            </xsd:complexType>
+
+
+            
+            <xsd:complexType name="dettaglio">
+
+
+                
+                <xsd:all>
+
+                    <xsd:element type="xsd:string" name="TempoRicarica"/>
+
+                    <xsd:element type="xsd:string" name="Corrente"/>
+
+                    <xsd:element type="xsd:string" name="Potenza"/>
+
+                    <xsd:element type="xsd:string" name="EstensioneAutonomia1hRicarica"/>
+
+                    <xsd:element type="xsd:string" name="InizioValidita"/>
+
+                    <xsd:element type="xsd:string" name="FineValidita"/>
+
+                    <xsd:element type="xsd:string" name="Opzionale"/>
+
+                    <xsd:element type="xsd:string" name="Tensione"/>
+
+                    <xsd:element type="xsd:string" name="CorrenteMassimaDa"/>
+
+                    <xsd:element type="xsd:string" name="CorrenteMassimaA"/>
+
+                    <xsd:element type="xsd:string" name="PotenzaMassimaDa"/>
+
+                    <xsd:element type="xsd:string" name="PotenzaMassimaA"/>
+
+                    <xsd:element type="xsd:string" name="NoteTipoRicarica"/>
+
+                    <xsd:element type="xsd:string" name="NomeTipoPresa"/>
+
+                    <xsd:element type="xsd:string" name="CodiceTipoPresa"/>
+
+                    <xsd:element type="xsd:string" name="CodiceDescrittivoTipoPresa"/>
+
+                    <xsd:element type="xsd:string" name="DescrizioneTipoPresa"/>
+
+                    <xsd:element type="xsd:string" name="FotografiaTipoPresa"/>
+
+                    <xsd:element type="xsd:string" name="CodiceCorrente"/>
+
+                    <xsd:element type="xsd:string" name="DescrizioneCorrente"/>
+
+                    <xsd:element type="xsd:string" name="NomeTipoFase"/>
+
+                    <xsd:element type="xsd:string" name="DescrizioneTipoFase"/>
+
+                    <xsd:element type="xsd:string" name="NomeModoRicarica"/>
+
+                    <xsd:element type="xsd:string" name="DescrizioneModoRicarica"/>
+
+                    <xsd:element type="xsd:string" name="NoteModoRicarica"/>
+
+                    <xsd:element type="xsd:string" name="codice_motornet"/>
+
+                    <xsd:element type="xsd:string" name="codice_eurotax"/>
+
+                </xsd:all>
+
+            </xsd:complexType>
+
+        </xsd:schema>
+
+    </types>
+
+
+    
+    <message name="loginRequest">
+
+        <part type="xsd:string" name="username"/>
+
+        <part type="xsd:string" name="password"/>
+
+    </message>
+
+
+    
+    <message name="loginResponse">
+
+        <part type="tns:loginResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getDatiUtenteRequest">
+
+        <part type="xsd:string" name="token"/>
+
+    </message>
+
+
+    
+    <message name="getDatiUtenteResponse">
+
+        <part type="tns:getDatiUtenteResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getMarcheRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="libro"/>
+
+    </message>
+
+
+    
+    <message name="getMarcheResponse">
+
+        <part type="tns:getMarcheResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getAnniRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="marca"/>
+
+    </message>
+
+
+    
+    <message name="getAnniResponse">
+
+        <part type="tns:getAnniResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getModelliRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="marca"/>
+
+        <part type="xsd:string" name="anno"/>
+
+        <part type="xsd:string" name="libro"/>
+
+        <part type="xsd:string" name="codice_tipo"/>
+
+    </message>
+
+
+    
+    <message name="getModelliResponse">
+
+        <part type="tns:getModelliResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getGruppoStoricoRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="marca"/>
+
+        <part type="xsd:string" name="anno"/>
+
+        <part type="xsd:string" name="mese"/>
+
+        <part type="xsd:string" name="libro"/>
+
+    </message>
+
+
+    
+    <message name="getGruppoStoricoResponse">
+
+        <part type="tns:getGruppoStoricoResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getSerieGammaRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="gruppoStorico"/>
+
+        <part type="xsd:string" name="anno"/>
+
+        <part type="xsd:string" name="mese"/>
+
+        <part type="xsd:string" name="libro"/>
+
+    </message>
+
+
+    
+    <message name="getSerieGammaResponse">
+
+        <part type="tns:getSerieGammaResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getModelloRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="serieGamma"/>
+
+        <part type="xsd:string" name="anno"/>
+
+        <part type="xsd:string" name="mese"/>
+
+        <part type="xsd:string" name="libro"/>
+
+    </message>
+
+
+    
+    <message name="getModelloResponse">
+
+        <part type="tns:getModelliResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getModelliGammaRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="gamma"/>
+
+        <part type="xsd:string" name="anno"/>
+
+        <part type="xsd:string" name="libro"/>
+
+    </message>
+
+
+    
+    <message name="getModelliGammaResponse">
+
+        <part type="tns:getModelliResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getTipologiaModelliRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="modello"/>
+
+        <part type="xsd:string" name="anno"/>
+
+        <part type="xsd:string" name="libro"/>
+
+    </message>
+
+
+    
+    <message name="getTipologiaModelliResponse">
+
+        <part type="tns:getTipologiaResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getPassiRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="tipologia"/>
+
+        <part type="xsd:string" name="modello"/>
+
+        <part type="xsd:string" name="porte"/>
+
+        <part type="xsd:string" name="anno"/>
+
+    </message>
+
+
+    
+    <message name="getPassiResponse">
+
+        <part type="tns:getPassiVINCResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getModelliMarcaRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="marca"/>
+
+        <part type="xsd:string" name="libro"/>
+
+    </message>
+
+
+    
+    <message name="getModelliMarcaResponse">
+
+        <part type="tns:getModelliResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getTipologiaRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="marca"/>
+
+        <part type="xsd:string" name="anno"/>
+
+        <part type="xsd:string" name="libro"/>
+
+    </message>
+
+
+    
+    <message name="getTipologiaResponse">
+
+        <part type="tns:getTipologiaResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getPorteRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="modello"/>
+
+        <part type="xsd:string" name="anno"/>
+
+    </message>
+
+
+    
+    <message name="getPorteResponse">
+
+        <part type="tns:getPorteResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getTipoVINCRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="modello"/>
+
+        <part type="xsd:string" name="porte"/>
+
+    </message>
+
+
+    
+    <message name="getTipoVINCResponse">
+
+        <part type="tns:getTipoVINCResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getPassiVINCRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="tipo"/>
+
+        <part type="xsd:string" name="modello"/>
+
+        <part type="xsd:string" name="porte"/>
+
+    </message>
+
+
+    
+    <message name="getPassiVINCResponse">
+
+        <part type="tns:getPassiVINCResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getVersioniRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="modello"/>
+
+        <part type="xsd:string" name="anno"/>
+
+        <part type="xsd:string" name="porte"/>
+
+        <part type="xsd:string" name="passo"/>
+
+        <part type="xsd:string" name="libro"/>
+
+        <part type="xsd:string" name="codice_costruttore"/>
+
+        <part type="xsd:string" name="marca"/>
+
+        <part type="xsd:string" name="tipologia"/>
+
+    </message>
+
+
+    
+    <message name="getVersioniResponse">
+
+        <part type="tns:getVersioniResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getVersioniModelloRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="modello"/>
+
+        <part type="xsd:string" name="porte"/>
+
+        <part type="xsd:string" name="passo"/>
+
+        <part type="xsd:string" name="libro"/>
+
+        <part type="xsd:string" name="codice_costruttore"/>
+
+        <part type="xsd:string" name="marca"/>
+
+        <part type="xsd:string" name="codice_futu"/>
+
+    </message>
+
+
+    
+    <message name="getVersioniModelloResponse">
+
+        <part type="tns:getVersioniResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getVersioniModello_RENRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="modello"/>
+
+        <part type="xsd:string" name="porte"/>
+
+        <part type="xsd:string" name="passo"/>
+
+        <part type="xsd:string" name="libro"/>
+
+        <part type="xsd:string" name="codice_costruttore"/>
+
+        <part type="xsd:string" name="marca"/>
+
+        <part type="xsd:string" name="codice_futu"/>
+
+    </message>
+
+
+    
+    <message name="getVersioniModello_RENResponse">
+
+        <part type="tns:getVersioniRenResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getAccessoriRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="codice_motornet"/>
+
+        <part type="xsd:string" name="codice_eurotax"/>
+
+        <part type="xsd:string" name="anno"/>
+
+        <part type="xsd:string" name="mese"/>
+
+    </message>
+
+
+    
+    <message name="getAccessoriResponse">
+
+        <part type="tns:getAccessoriResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getRiparazioniRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="codice_motornet"/>
+
+        <part type="xsd:string" name="codice_eurotax"/>
+
+    </message>
+
+
+    
+    <message name="getRiparazioniResponse">
+
+        <part type="tns:getRiparazioniResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getDettaglioAutoRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="codice_motornet"/>
+
+        <part type="xsd:string" name="codice_eurotax"/>
+
+    </message>
+
+
+    
+    <message name="getDettaglioAutoResponse">
+
+        <part type="tns:getDettaglioAutoResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getDettaglioAutoAggiuntivoRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="codice_motornet"/>
+
+        <part type="xsd:string" name="codice_eurotax"/>
+
+    </message>
+
+
+    
+    <message name="getDettaglioAutoAggiuntivoResponse">
+
+        <part type="tns:getDettaglioAutoAggiuntivoResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getDettaglioCaravanRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="codice_motornet"/>
+
+        <part type="xsd:string" name="codice_eurotax"/>
+
+    </message>
+
+
+    
+    <message name="getDettaglioCaravanResponse">
+
+        <part type="tns:getDettaglioCaravanResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getDettaglioCamperRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="codice_motornet"/>
+
+        <part type="xsd:string" name="codice_eurotax"/>
+
+    </message>
+
+
+    
+    <message name="getDettaglioCamperResponse">
+
+        <part type="tns:getDettaglioCamperResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getDettaglioMotoRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="codice_motornet"/>
+
+        <part type="xsd:string" name="codice_eurotax"/>
+
+    </message>
+
+
+    
+    <message name="getDettaglioMotoResponse">
+
+        <part type="tns:getDettaglioMotoResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getDettaglioVindRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="codice_motornet"/>
+
+        <part type="xsd:string" name="codice_eurotax"/>
+
+    </message>
+
+
+    
+    <message name="getDettaglioVindResponse">
+
+        <part type="tns:getDettaglioVindResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getDettaglioVcomRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="codice_motornet"/>
+
+        <part type="xsd:string" name="codice_eurotax"/>
+
+    </message>
+
+
+    
+    <message name="getDettaglioVcomResponse">
+
+        <part type="tns:getDettaglioVcomResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getValutazioneRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="codice_motornet"/>
+
+        <part type="xsd:string" name="codice_eurotax"/>
+
+        <part type="xsd:string" name="anno"/>
+
+        <part type="xsd:string" name="mese"/>
+
+        <part type="xsd:string" name="km"/>
+
+        <part type="xsd:string" name="accessori"/>
+
+        <part type="xsd:string" name="codice_omologazione"/>
+
+        <part type="xsd:string" name="targa"/>
+
+        <part type="xsd:string" name="telaio"/>
+
+        <part type="xsd:string" name="costo_orario_manodopera_meccanica"/>
+
+        <part type="xsd:string" name="costo_orario_manodopera_carrozzeria"/>
+
+        <part type="xsd:string" name="autocarro"/>
+
+        <part type="xsd:string" name="lavori_meccanica"/>
+
+        <part type="xsd:string" name="lavori_carrozzeria"/>
+
+        <part type="xsd:string" name="valutazione_dealer"/>
+
+        <part type="xsd:string" name="anno_valutazione"/>
+
+        <part type="xsd:string" name="mese_valutazione"/>
+
+        <part type="xsd:string" name="guidkey"/>
+
+    </message>
+
+
+    
+    <message name="getValutazioneResponse">
+
+        <part type="tns:getValutazioneResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="searchTargaRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="targa"/>
+
+    </message>
+
+
+    
+    <message name="searchTargaResponse">
+
+        <part type="tns:searchTargaResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="searchTarga_RENRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="targa"/>
+
+    </message>
+
+
+    
+    <message name="searchTarga_RENResponse">
+
+        <part type="tns:searchTargaRenResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="searchTargaCostruttoreRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="targa"/>
+
+        <part type="xsd:string" name="codice_costruttore"/>
+
+    </message>
+
+
+    
+    <message name="searchTargaCostruttoreResponse">
+
+        <part type="tns:searchTargaCostruttoreResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="searchTargaMinisteroRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="targa"/>
+
+    </message>
+
+
+    
+    <message name="searchTargaMinisteroResponse">
+
+        <part type="tns:searchTargaMinisteroResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getCodiceMotoreRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="codice_eurotax"/>
+
+    </message>
+
+
+    
+    <message name="getCodiceMotoreResponse">
+
+        <part type="tns:getCodiceMotoreResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="searchEurotaxRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="codice_eurotax"/>
+
+    </message>
+
+
+    
+    <message name="searchEurotaxResponse">
+
+        <part type="tns:searchEurotaxResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="searchCostruttoreRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="codice_costruttore"/>
+
+        <part type="xsd:string" name="inProduzione"/>
+
+        <part type="xsd:string" name="km0"/>
+
+    </message>
+
+
+    
+    <message name="searchCostruttoreResponse">
+
+        <part type="tns:searchEurotaxResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="searchOmologazioneRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="codice_omologazione"/>
+
+        <part type="xsd:string" name="data_immatricolazione"/>
+
+    </message>
+
+
+    
+    <message name="searchOmologazioneResponse">
+
+        <part type="tns:searchOmologazioneResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getAnniValutazioneRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+    </message>
+
+
+    
+    <message name="getAnniValutazioneResponse">
+
+        <part type="tns:getAnniValutazioneResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getXMLRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="guidkey"/>
+
+    </message>
+
+
+    
+    <message name="getXMLResponse">
+
+        <part type="tns:getXMLResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getGruppiStoriciRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="marca"/>
+
+    </message>
+
+
+    
+    <message name="getGruppiStoriciResponse">
+
+        <part type="tns:getGruppiStoriciResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="sendRivalutazioneRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="text_csv"/>
+
+    </message>
+
+
+    
+    <message name="sendRivalutazioneResponse">
+
+        <part type="xsd:string" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getRivalutazioneRequest">
+
+        <part type="xsd:string" name="token"/>
+
+    </message>
+
+
+    
+    <message name="getRivalutazioneResponse">
+
+        <part type="tns:getRivalutazioneResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getGammaVeicoliIndustrialiRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="marca"/>
+
+        <part type="xsd:string" name="anno"/>
+
+        <part type="xsd:string" name="libro"/>
+
+        <part type="xsd:string" name="codice_tipo"/>
+
+    </message>
+
+
+    
+    <message name="getGammaVeicoliIndustrialiResponse">
+
+        <part type="tns:getModelliResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getDettaglioAutoWLTPRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="codice_motornet"/>
+
+        <part type="xsd:string" name="codice_eurotax"/>
+
+        <part type="xsd:string" name="data_riferimento"/>
+
+    </message>
+
+
+    
+    <message name="getDettaglioAutoWLTPResponse">
+
+        <part type="tns:getDettaglioAutoWLTPResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getDettaglioVcomWLTPRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="codice_motornet"/>
+
+        <part type="xsd:string" name="codice_eurotax"/>
+
+        <part type="xsd:string" name="data_riferimento"/>
+
+    </message>
+
+
+    
+    <message name="getDettaglioVcomWLTPResponse">
+
+        <part type="tns:getDettaglioVcomWLTPResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <message name="getDettaglioElettricoRequest">
+
+        <part type="xsd:string" name="token"/>
+
+        <part type="xsd:string" name="tipo_veicolo"/>
+
+        <part type="xsd:string" name="codice_motornet"/>
+
+        <part type="xsd:string" name="codice_eurotax"/>
+
+    </message>
+
+
+    
+    <message name="getDettaglioElettricoResponse">
+
+        <part type="tns:getDettaglioElettricoResult" name="risultato"/>
+
+    </message>
+
+
+    
+    <portType name="motornetwebservicePortType">
+
+
+        
+        <operation name="login">
+
+            <input message="tns:loginRequest"/>
+
+            <output message="tns:loginResponse"/>
+
+        </operation>
+
+
+        
+        <operation name="getDatiUtente">
+
+            <input message="tns:getDatiUtenteRequest"/>
+
+            <output message="tns:getDatiUtenteResponse"/>
+
+        </operation>
+
+
+        
+        <operation name="getMarche">
+
+            <input message="tns:getMarcheRequest"/>
+
+            <output message="tns:getMarcheResponse"/>
+
+        </operation>
+
+
+        
+        <operation name="getAnni">
+
+            <input message="tns:getAnniRequest"/>
+
+            <output message="tns:getAnniResponse"/>
+
+        </operation>
+
+
+        
+        <operation name="getModelli">
+
+            <input message="tns:getModelliRequest"/>
+
+            <output message="tns:getModelliResponse"/>
+
+        </operation>
+
+
+        
+        <operation name="getGruppoStorico">
+
+            <input message="tns:getGruppoStoricoRequest"/>
+
+            <output message="tns:getGruppoStoricoResponse"/>
+
+        </operation>
+
+
+        
+        <operation name="getSerieGamma">
+
+            <input message="tns:getSerieGammaRequest"/>
+
+            <output message="tns:getSerieGammaResponse"/>
+
+        </operation>
+
+
+        
+        <operation name="getModello">
+
+            <input message="tns:getModelloRequest"/>
+
+            <output message="tns:getModelloResponse"/>
+
+        </operation>
+
+
+        
+        <operation name="getModelliGamma">
+
+            <input message="tns:getModelliGammaRequest"/>
+
+            <output message="tns:getModelliGammaResponse"/>
+
+        </operation>
+
+
+        
+        <operation name="getTipologiaModelli">
+
+            <input message="tns:getTipologiaModelliRequest"/>
+
+            <output message="tns:getTipologiaModelliResponse"/>
+
+        </operation>
+
+
+        
+        <operation name="getPassi">
+
+            <input message="tns:getPassiRequest"/>
+
+            <output message="tns:getPassiResponse"/>
+
+        </operation>
+
+
+        
+        <operation name="getModelliMarca">
+
+            <input message="tns:getModelliMarcaRequest"/>
+
+            <output message="tns:getModelliMarcaResponse"/>
+
+        </operation>
+
+
+        
+        <operation name="getTipologia">
+
+            <input message="tns:getTipologiaRequest"/>
+
+            <output message="tns:getTipologiaResponse"/>
+
+        </operation>
+
+
+        
+        <operation name="getPorte">
+
+            <input message="tns:getPorteRequest"/>
+
+            <output message="tns:getPorteResponse"/>
+
+        </operation>
+
+
+        
+        <operation name="getTipoVINC">
+
+            <input message="tns:getTipoVINCRequest"/>
+
+            <output message="tns:getTipoVINCResponse"/>
+
+        </operation>
+
+
+        
+        <operation name="getPassiVINC">
+
+            <input message="tns:getPassiVINCRequest"/>
+
+            <output message="tns:getPassiVINCResponse"/>
+
+        </operation>
+
+
+        
+        <operation name="getVersioni">
+
+            <input message="tns:getVersioniRequest"/>
+
+            <output message="tns:getVersioniResponse"/>
+
+        </operation>
+
+
+
+        <operation name="getVersioniModello">
+
+            <input message="tns:getVersioniModelloRequest"/>
+
+            <output message="tns:getVersioniModelloResponse"/>
+
+        </operation>
+
+
+
+        <operation name="getVersioniModello_REN">
+
+            <input message="tns:getVersioniModello_RENRequest"/>
+
+            <output message="tns:getVersioniModello_RENResponse"/>
+
+        </operation>
+
+
+
+        <operation name="getAccessori">
+
+            <input message="tns:getAccessoriRequest"/>
+
+            <output message="tns:getAccessoriResponse"/>
+
+        </operation>
+
+
+
+        <operation name="getRiparazioni">
+
+            <input message="tns:getRiparazioniRequest"/>
+
+            <output message="tns:getRiparazioniResponse"/>
+
+        </operation>
+
+
+
+        <operation name="getDettaglioAuto">
+
+            <input message="tns:getDettaglioAutoRequest"/>
+
+            <output message="tns:getDettaglioAutoResponse"/>
+
+        </operation>
+
+
+
+        <operation name="getDettaglioAutoAggiuntivo">
+
+            <input message="tns:getDettaglioAutoAggiuntivoRequest"/>
+
+            <output message="tns:getDettaglioAutoAggiuntivoResponse"/>
+
+        </operation>
+
+
+
+        <operation name="getDettaglioCaravan">
+
+            <input message="tns:getDettaglioCaravanRequest"/>
+
+            <output message="tns:getDettaglioCaravanResponse"/>
+
+        </operation>
+
+
+
+        <operation name="getDettaglioCamper">
+
+            <input message="tns:getDettaglioCamperRequest"/>
+
+            <output message="tns:getDettaglioCamperResponse"/>
+
+        </operation>
+
+
+
+        <operation name="getDettaglioMoto">
+
+            <input message="tns:getDettaglioMotoRequest"/>
+
+            <output message="tns:getDettaglioMotoResponse"/>
+
+        </operation>
+
+
+
+        <operation name="getDettaglioVind">
+
+            <input message="tns:getDettaglioVindRequest"/>
+
+            <output message="tns:getDettaglioVindResponse"/>
+
+        </operation>
+
+
+
+        <operation name="getDettaglioVcom">
+
+            <input message="tns:getDettaglioVcomRequest"/>
+
+            <output message="tns:getDettaglioVcomResponse"/>
+
+        </operation>
+
+
+
+        <operation name="getValutazione">
+
+            <input message="tns:getValutazioneRequest"/>
+
+            <output message="tns:getValutazioneResponse"/>
+
+        </operation>
+
+
+
+        <operation name="searchTarga">
+
+            <input message="tns:searchTargaRequest"/>
+
+            <output message="tns:searchTargaResponse"/>
+
+        </operation>
+
+
+
+        <operation name="searchTarga_REN">
+
+            <input message="tns:searchTarga_RENRequest"/>
+
+            <output message="tns:searchTarga_RENResponse"/>
+
+        </operation>
+
+
+
+        <operation name="searchTargaCostruttore">
+
+            <input message="tns:searchTargaCostruttoreRequest"/>
+
+            <output message="tns:searchTargaCostruttoreResponse"/>
+
+        </operation>
+
+
+
+        <operation name="searchTargaMinistero">
+
+            <input message="tns:searchTargaMinisteroRequest"/>
+
+            <output message="tns:searchTargaMinisteroResponse"/>
+
+        </operation>
+
+
+
+        <operation name="getCodiceMotore">
+
+            <input message="tns:getCodiceMotoreRequest"/>
+
+            <output message="tns:getCodiceMotoreResponse"/>
+
+        </operation>
+
+
+
+        <operation name="searchEurotax">
+
+            <input message="tns:searchEurotaxRequest"/>
+
+            <output message="tns:searchEurotaxResponse"/>
+
+        </operation>
+
+
+
+        <operation name="searchCostruttore">
+
+            <input message="tns:searchCostruttoreRequest"/>
+
+            <output message="tns:searchCostruttoreResponse"/>
+
+        </operation>
+
+
+
+        <operation name="searchOmologazione">
+
+            <input message="tns:searchOmologazioneRequest"/>
+
+            <output message="tns:searchOmologazioneResponse"/>
+
+        </operation>
+
+
+
+        <operation name="getAnniValutazione">
+
+            <input message="tns:getAnniValutazioneRequest"/>
+
+            <output message="tns:getAnniValutazioneResponse"/>
+
+        </operation>
+
+
+
+        <operation name="getXML">
+
+            <input message="tns:getXMLRequest"/>
+
+            <output message="tns:getXMLResponse"/>
+
+        </operation>
+
+
+
+        <operation name="getGruppiStorici">
+
+            <input message="tns:getGruppiStoriciRequest"/>
+
+            <output message="tns:getGruppiStoriciResponse"/>
+
+        </operation>
+
+
+
+        <operation name="sendRivalutazione">
+
+            <input message="tns:sendRivalutazioneRequest"/>
+
+            <output message="tns:sendRivalutazioneResponse"/>
+
+        </operation>
+
+
+
+        <operation name="getRivalutazione">
+
+            <input message="tns:getRivalutazioneRequest"/>
+
+            <output message="tns:getRivalutazioneResponse"/>
+
+        </operation>
+
+
+
+        <operation name="getGammaVeicoliIndustriali">
+
+            <input message="tns:getGammaVeicoliIndustrialiRequest"/>
+
+            <output message="tns:getGammaVeicoliIndustrialiResponse"/>
+
+        </operation>
+
+
+
+        <operation name="getDettaglioAutoWLTP">
+
+            <input message="tns:getDettaglioAutoWLTPRequest"/>
+
+            <output message="tns:getDettaglioAutoWLTPResponse"/>
+
+        </operation>
+
+
+
+        <operation name="getDettaglioVcomWLTP">
+
+            <input message="tns:getDettaglioVcomWLTPRequest"/>
+
+            <output message="tns:getDettaglioVcomWLTPResponse"/>
+
+        </operation>
+
+
+
+        <operation name="getDettaglioElettrico">
+
+            <input message="tns:getDettaglioElettricoRequest"/>
+
+            <output message="tns:getDettaglioElettricoResponse"/>
+
+        </operation>
+
+    </portType>
+
+
+
+    <binding type="tns:motornetwebservicePortType" name="motornetwebserviceBinding">
+
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+
+
+        <operation name="login">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#loginServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getDatiUtente">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getDatiUtenteServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getMarche">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getMarcheServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getAnni">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getAnniServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getModelli">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getModelliServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getGruppoStorico">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getGruppoStoricoServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getSerieGamma">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getSerieGammaServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getModello">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getModelliServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getModelliGamma">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getModelliVeicoliServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getTipologiaModelli">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getTipologiaServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getPassi">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getPassiVINCServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getModelliMarca">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getModelliMarcaServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getTipologia">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getTipologiaServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getPorte">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getPorteServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getTipoVINC">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getTipoVINCServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getPassiVINC">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getPassiVINCServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getVersioni">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getVersioniServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getVersioniModello">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getVersioniModelloServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getVersioniModello_REN">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getVersioniModello_RENServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getAccessori">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getAccessoriServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getRiparazioni">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getRiparazioniServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getDettaglioAuto">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getDettaglioAutoServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getDettaglioAutoAggiuntivo">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getDettaglioAutoAggiuntivoServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getDettaglioCaravan">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getDettaglioCaravanServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getDettaglioCamper">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getDettaglioCamperServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getDettaglioMoto">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getDettaglioMotoServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getDettaglioVind">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getDettaglioVindServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getDettaglioVcom">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getDettaglioVcomServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+
+        <operation name="getValutazione">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getValutazioneServer"/>
+
+
+
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+        
+        <operation name="searchTarga">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#searchTargaServer"/>
+
+
+            
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+            
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+        
+        <operation name="searchTarga_REN">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#searchTargaRenServer"/>
+
+
+            
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+            
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+        
+        <operation name="searchTargaCostruttore">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#searchTargaCostruttoreServer"/>
+
+
+            
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+            
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+        
+        <operation name="searchTargaMinistero">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#searchTargaMinisteroServer"/>
+
+
+            
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+            
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+        
+        <operation name="getCodiceMotore">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getCodiceMotoreResult"/>
+
+
+            
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+            
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+        
+        <operation name="searchEurotax">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#searchEurotaxServer"/>
+
+
+            
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+            
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+        
+        <operation name="searchCostruttore">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#searchEurotaxServer"/>
+
+
+            
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+            
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+        
+        <operation name="searchOmologazione">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#searchOmologazioneServer"/>
+
+
+            
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+            
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+        
+        <operation name="getAnniValutazione">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getAnniValutazioneServer"/>
+
+
+            
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+            
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+        
+        <operation name="getXML">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getXMLServer"/>
+
+
+            
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+            
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+        
+        <operation name="getGruppiStorici">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getGruppiStoriciServer"/>
+
+
+            
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+            
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+        
+        <operation name="sendRivalutazione">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#sendRivalutazioneServer"/>
+
+
+            
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+            
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+        
+        <operation name="getRivalutazione">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getRivalutazioneServer"/>
+
+
+            
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+            
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+        
+        <operation name="getGammaVeicoliIndustriali">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getModelliServer"/>
+            <input>
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+            </input>
+            <output>
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+            </output>
+        </operation>
+        <operation name="getDettaglioAutoWLTP">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getDettaglioAutoWLTPServer"/>
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+            
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+        
+        <operation name="getDettaglioVcomWLTP">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getDettaglioVcomWLTPServer"/>
+
+
+            
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+            
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+
+        
+        <operation name="getDettaglioElettrico">
+
+            <soap:operation style="rpc" soapAction="urn:motornetwebservice#getDettaglioElettricoServer"/>
+
+
+            
+            <input>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </input>
+
+
+            
+            <output>
+
+                <soap:body namespace="urn:motornetwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           use="encoded"/>
+
+            </output>
+
+        </operation>
+
+    </binding>
+
+
+    
+    <service name="motornetwebservice">
+
+
+        
+        <port name="motornetwebservicePort" binding="tns:motornetwebserviceBinding">
+
+            <soap:address location="https://webservice.motornet.it:443/server.php/.wsdl"/>
+
+        </port>
+
+    </service>
+
+</definitions>
