@@ -7,8 +7,29 @@
 
 <h:body>
     <h:form>
-        <h:inputText value="#{Bean.tar}"></h:inputText>
-        <h:commandButton action="welcome"></h:commandButton>
+        <h:inputText value="#{Bean.targa}"></h:inputText><h2>targa</h2>
+        <br/>
+        <h:inputText value="#{Bean.brand}"></h:inputText><h2>brand</h2>
+        <br/>
+        <h:commandButton type="submit" action="#{Bean.searchTarga}">submit1</h:commandButton>
     </h:form>
+    <br/>
+    <br/>
+    <br/>
+    <h:inputText readonly="true" value="#{Bean.targaRes.modello}"/>
+    <h:inputText readonly="true" value="#{Bean.targaRes.marca}"/>
+    <h:form>
+        <h:inputText readonly="true" value="#{Bean.targa}"/>
+        <h:inputText readonly="true" value="#{Bean.targaRes.dataImmatricolazione}"/>
+        <h:selectOneMenu value="#{Bean.eutaxCode}">
+            <f:selectItems value="#{Bean.targaRes.versioni}" var="versione" itemLabel="#{versione.description}" itemValue="#{versione.eurotaxCode}"/>
+        </h:selectOneMenu>
+        <h:commandButton type="submit" action="#{Bean.valutazione}">submit1</h:commandButton>
+    </h:form>
+    <br/>
+    <br/>
+    <br/>
+    <h:inputText readonly="true" value="#{Bean.valutazioneRes.quotazione}"/>
+    <h:inputText readonly="true" value="#{Bean.valutazioneRes.quotazioneBlu}"/>
 </h:body>
 </html>

@@ -1,0 +1,102 @@
+SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:motornetwebservice">
+<SOAP-ENV:Body>
+    <ns1:searchTargaResponse xmlns:ns1="urn:motornetwebservice">
+        <risultato xsi:type="tns:searchTargaResult">
+            <tipo_veicolo xsi:type="xsd:string">auto</tipo_veicolo>
+            <versioni xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="tns:veicolo[4]">
+                <item xsi:type="tns:veicolo">
+                    <codice_motornet xsi:type="xsd:string">MER7022</codice_motornet>
+                    <codice_eurotax xsi:type="xsd:string">1023286</codice_eurotax>
+                    <modello_codice xsi:type="xsd:string">0944</modello_codice>
+                    <versione xsi:type="xsd:string">A 160 cdi Classic coupe</versione>
+                    <tipo xsi:type="xsd:string">Mnv</tipo>
+                    <passo xsi:type="xsd:string">257</passo>
+                    <prezzo_vendita xsi:type="xsd:string">21.330</prezzo_vendita>
+                    <da xsi:type="xsd:string">10/2004</da>
+                    <a xsi:type="xsd:string">05/2008</a>
+                    <inizio_produzione xsi:type="xsd:string">2004-10-01</inizio_produzione>
+                    <fine_produzione xsi:type="xsd:string">2008-05-21</fine_produzione>
+                    <porte xsi:type="xsd:string">3</porte>
+                </item>
+                <item xsi:type="tns:veicolo">
+                    <codice_motornet xsi:type="xsd:string">MER7023</codice_motornet>
+                    <codice_eurotax xsi:type="xsd:string">1023287</codice_eurotax>
+                    <modello_codice xsi:type="xsd:string">0944</modello_codice>
+                    <versione xsi:type="xsd:string">A 160 cdi Elegance coupe</versione>
+                    <tipo xsi:type="xsd:string">Mnv</tipo>
+                    <passo xsi:type="xsd:string">257</passo>
+                    <prezzo_vendita xsi:type="xsd:string">23.010</prezzo_vendita>
+                    <da xsi:type="xsd:string">10/2004</da>
+                    <a xsi:type="xsd:string">05/2008</a>
+                    <inizio_produzione xsi:type="xsd:string">2004-10-01</inizio_produzione>
+                    <fine_produzione xsi:type="xsd:string">2008-05-21</fine_produzione>
+                    <porte xsi:type="xsd:string">3</porte>
+                </item>
+                <item xsi:type="tns:veicolo">
+                    <codice_motornet xsi:type="xsd:string">MER7024</codice_motornet>
+                    <codice_eurotax xsi:type="xsd:string">1023288</codice_eurotax>
+                    <modello_codice xsi:type="xsd:string">0944</modello_codice>
+                    <versione xsi:type="xsd:string">A 160 cdi Avantgarde coupe</versione>
+                    <tipo xsi:type="xsd:string">Mnv</tipo>
+                    <passo xsi:type="xsd:string">257</passo>
+                    <prezzo_vendita xsi:type="xsd:string">23.140</prezzo_vendita>
+                    <da xsi:type="xsd:string">10/2004</da>
+                    <a xsi:type="xsd:string">05/2008</a>
+                    <inizio_produzione xsi:type="xsd:string">2004-10-01</inizio_produzione>
+                    <fine_produzione xsi:type="xsd:string">2008-05-21</fine_produzione>
+                    <porte xsi:type="xsd:string">3</porte>
+                </item>
+                <item xsi:type="tns:veicolo">
+                    <codice_motornet xsi:type="xsd:string">MER7031</codice_motornet>
+                    <codice_eurotax xsi:type="xsd:string">1023285</codice_eurotax>
+                    <modello_codice xsi:type="xsd:string">0944</modello_codice>
+                    <versione xsi:type="xsd:string">A 160 cdi Classic Basic coupe</versione>
+                    <tipo xsi:type="xsd:string">Mnv</tipo>
+                    <passo xsi:type="xsd:string">257</passo>
+                    <prezzo_vendita xsi:type="xsd:string">19.870</prezzo_vendita>
+                    <da xsi:type="xsd:string">10/2004</da>
+                    <a xsi:type="xsd:string">05/2008</a>
+                    <inizio_produzione xsi:type="xsd:string">2004-10-01</inizio_produzione>
+                    <fine_produzione xsi:type="xsd:string">2008-05-21</fine_produzione>
+                    <porte xsi:type="xsd:string">3</porte>
+                </item>
+            </versioni>
+            <marca xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="tns:marca[1]">
+                <item xsi:type="tns:marca">
+                    <acronimo xsi:type="xsd:string">MER</acronimo>
+                    <nome xsi:type="xsd:string">Mercedes</nome>
+                </item>
+            </marca>
+            <modelli xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="tns:modello[1]">
+                <item xsi:type="tns:modello">
+                    <cod_gamma_mod xsi:type="xsd:string">0944</cod_gamma_mod>
+                    <desc_gamma_mod xsi:type="xsd:string">Classe A - W/C 169</desc_gamma_mod>
+                    <da xsi:type="xsd:string">09/2004</da>
+                    <a xsi:type="xsd:string">06/2012</a>
+                    <codice_gruppo_storico xsi:type="xsd:string">0486</codice_gruppo_storico>
+                    <descrizione_gruppo_storico xsi:type="xsd:string">Classe A</descrizione_gruppo_storico>
+                    <codice_serie_gamma xsi:type="xsd:string">0794</codice_serie_gamma>
+                    <descrizione_serie_gamma xsi:type="xsd:string">Classe A - W/C 169</descrizione_serie_gamma>
+                    <codice_modello xsi:type="xsd:string">2110</codice_modello>
+                    <descrizione_modello xsi:type="xsd:string">Classe A - 169 Diesel</descrizione_modello>
+                </item>
+            </modelli>
+            <porte xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="tns:porta[1]">
+                <item xsi:type="tns:porta">
+                    <numero xsi:type="xsd:string">3</numero>
+                </item>
+            </porte>
+            <passo xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="tns:passo[0]"/>
+            <tipologia xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="tns:tipo[0]"/>
+            <targa xsi:type="xsd:string">DB915KS</targa>
+            <telaio xsi:type="xsd:string">WDD1693061J160677</telaio>
+            <data_imm xsi:type="xsd:string">30/01/2007</data_imm>
+            <targa_estero xsi:type="xsd:string">CWMD556</targa_estero>
+            <data_imm_estero xsi:type="xsd:string">2005</data_imm_estero>
+            <stato_estero xsi:type="xsd:string">GERMANIA</stato_estero>
+            <ricerche_targa_rimanenti xsi:type="xsd:string">33449</ricerche_targa_rimanenti>
+            <message xsi:nil="true" xsi:type="xsd:string"/>
+        </risultato>
+    </ns1:searchTargaResponse>
+</SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>

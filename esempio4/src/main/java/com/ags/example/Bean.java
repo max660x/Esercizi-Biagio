@@ -5,32 +5,52 @@ import java.io.Serializable;
 import com.ags.example.*;
 
 @ManagedBean
-@SessionScoped
 public class Bean implements Serializable {
-    private String tar;
-    public MotornetService service;
-    private String generated;
+    // Variabili
+    public String targa;
+    public String brand;
+
+    private String eutaxCode;
+    public SearchTargaResponse searchTargaResponse;
+    public ValutazioneResponse valutazioneResponse;
     private static final long serialVersionUID = 1L;
-    public SearchTargaResponse response;
-    public String getTar() {
-        return tar;
-    }
-    public void setTar(String hw) {
-        this.tar= tar;
-    }
 
-    public String genToken() throws Exception {
-        generated=service.loginAction();
-        return generated;
+    //Metodi
+    public void searchTarga() throws Exception {
+        MotornetService service = new MotornetService();
+        this.searchTargaResponse = service.searchTarga(this.brand, this.targa);
     }
+    public void valutazione() throws Exception {
+        MotornetService service= new MotornetService();
+        this.valutazioneResponse= service.getValutazione(this.targa,this.eutaxCode,this.searchTargaResponse.getDataImmatricolazione());
+    }
+    //getter and setter
 
-    public SearchTargaResponse searchTarga (String targa) throws Exception {
-
-        String secondgen= service.loginAction();
-        response=service.searchTarga(secondgen,targa);
-        return response;
+    public String getEutaxCode() {
+        return eutaxCode;
     }
 
+    public void setEutaxCode(String eutaxCode) {
+        this.eutaxCode =eutaxCode;
+    }
 
+    public String getTarga() {
+        return targa;
+    }
+    public void setTarga(String targa) {
+        this.targa = targa;
+    }
+    public String getBrand() {
+        return brand;
+    }
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
 
+    public SearchTargaResponse getSearchTargaResponse() {
+        return searchTargaResponse;
+    }
+    public ValutazioneResponse getValutazioneResponse(){
+        return valutazioneResponse;
+    }
 }

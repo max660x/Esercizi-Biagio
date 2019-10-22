@@ -2,6 +2,6 @@
     <managed-bean>
         <managed-bean-name>Bean</managed-bean-name>
         <managed-bean-class>com.ags.example.Bean</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
+        <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
 </faces-config>

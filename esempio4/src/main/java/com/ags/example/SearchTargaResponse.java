@@ -5,6 +5,8 @@ import java.util.List;
 public class SearchTargaResponse {
     private String marca;
     private List<Versione> versioni;
+    private String modello;
+    private String dataImmatricolazione;
 
     public String getMarca() {
         return marca;
@@ -22,17 +24,13 @@ public class SearchTargaResponse {
         this.modello = modello;
     }
 
-    public String getDdimm() {
-        return ddimm;
+    public String getDataImmatricolazione() {
+        return dataImmatricolazione;
     }
 
-    public void setDdimm(String ddimm) {
-        this.ddimm = ddimm;
+    public void setDataImmatricolazione(String dataImmatricolazione) {
+        this.dataImmatricolazione =dataImmatricolazione;
     }
-
-    private String modello;
-    private String ddimm;
-
 
     public List<Versione> getVersioni() {
         return versioni;

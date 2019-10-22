@@ -1,0 +1,42 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <ns2:CanaliVOResponse>
+        <ns2:info>
+            <ns2:makeCode>REN</ns2:makeCode>
+            <ns2:makeDescription>Renault</ns2:makeDescription>
+            <ns2:modelCode>0660</ns2:modelCode>
+            <ns2:modelDescription>Twingo</ns2:modelDescription>
+            <ns2:modelVersionCode>8428</ns2:modelVersionCode>
+            <ns2:modelVersionDescription>Twingo 2015 Benzina</ns2:modelVersionDescription>
+            <ns2:vin>VF1AHB40D60388899</ns2:vin>
+            <ns2:plate>FT191EM</ns2:plate>
+            <ns2:channelCategoryCode>VO</ns2:channelCategoryCode>
+            <ns2:categoryVehicle>auto</ns2:categoryVehicle>
+            <ns2:registrationDate>20181031</ns2:registrationDate>
+            <ns2:ModelVersions>
+                <ns2:ModelVersion>
+                    <ns2:description>twingo 1.0 sce Life (wave) 69cv E6</ns2:description>
+                    <ns2:eurotaxCode>1123985</ns2:eurotaxCode>
+                </ns2:ModelVersion>
+                <ns2:ModelVersion>
+                    <ns2:description>twingo 1.0 sce Zen (live) 69cv E6</ns2:description>
+                    <ns2:eurotaxCode>1123986</ns2:eurotaxCode>
+                </ns2:ModelVersion>
+                <ns2:ModelVersion>
+                    <ns2:description>twingo 1.0 sce Lovely 69cv</ns2:description>
+                    <ns2:eurotaxCode>1125858</ns2:eurotaxCode>
+                </ns2:ModelVersion>
+                <ns2:ModelVersion>
+                    <ns2:description>twingo 1.0 sce Life 69cv my18</ns2:description>
+                    <ns2:eurotaxCode>1134203</ns2:eurotaxCode>
+                </ns2:ModelVersion>
+                <ns2:ModelVersion>
+                    <ns2:description>twingo 1.0 sce Zen 69cv my18</ns2:description>
+                    <ns2:eurotaxCode>1134204</ns2:eurotaxCode>
+                </ns2:ModelVersion>
+                <ns2:ModelVersion>
+                    <ns2:description>twingo 1.0 sce Lovely 69cv my18</ns2:description>
+                    <ns2:eurotaxCode>1134205</ns2:eurotaxCode>
+                </ns2:ModelVersion>
+            </ns2:ModelVersions>
+        </ns2:info>
+    </ns2:CanaliVOResponse>

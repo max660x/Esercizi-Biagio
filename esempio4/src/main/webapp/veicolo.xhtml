@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:body>
+    <h:form>
+        <h:inputText value="#{veicoloBean.targa}"></h:inputText><h2>targa</h2>
+        <br/>
+        <h:inputText value="#{veicoloBean.brand}"></h:inputText><h2>brand</h2>
+        <br/>
+        <h:commandButton type="submit" action="#{veicoloBean.searchTarga}">submit1</h:commandButton>
+    </h:form>
+    <br/>
+    <br/>
+    <br/>
+    <h:inputText readonly="true" value="#{veicoloBean.targaRes.modello}"/>
+    <h:inputText readonly="true" value="#{veicoloBean.targaRes.marca}"/>
+    <h:form>
+        <h:inputText readonly="true" value="#{veicoloBean.targa}"/>
+        <h:inputText readonly="true" value="#{veicoloBean.targaRes.dataImmatricolazione}"/>
+        <h:selectOneMenu value="#{veicoloBean.eutaxCode}">
+            <f:selectItems value="#{veicoloBean.targaRes.versioni}" var="versione" itemLabel="#{versione.description}" itemValue="#{versione.eurotaxCode}"/>
+        </h:selectOneMenu>
+        <h:commandButton type="submit" action="#{veicoloBean.valutazione}">submit1</h:commandButton>
+    </h:form>
+    <br/>
+    <br/>
+    <br/>
+    <h:inputText readonly="true" value="#{veicoloBean.valutazioneRes.quotazione}"/>
+    <h:inputText readonly="true" value="#{veicoloBean.valutazioneRes.quotazioneBlu}"/>
+</h:body>
+</html>

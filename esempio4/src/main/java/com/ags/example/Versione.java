@@ -1,9 +1,9 @@
 package com.ags.example;
 
 public class Versione {
-    private String codiceEurotax;
+    private String eurotaxCode;
     private String codiceMotornet;
-    private String versione;
+    private String description;
 
     public String getCodiceMotornet() {
         return codiceMotornet;
@@ -13,21 +13,19 @@ public class Versione {
         this.codiceMotornet = codiceMotornet;
     }
 
-
-
-    public String getCodiceEurotax() {
-        return codiceEurotax;
+    public String getEurotaxCode() {
+        return eurotaxCode;
     }
 
-    public void setCodiceEurotax(String codiceEurotax) {
-        this.codiceEurotax = codiceEurotax;
+    public void setEurotaxCode(String eurotaxCode) {
+        this.eurotaxCode = eurotaxCode;
     }
 
-    public String getVersione() {
-        return versione;
+    public String getDescription() {
+        return description;
     }
 
-    public void setVersione(String versione) {
-        this.versione = versione;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
