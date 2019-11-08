@@ -19,7 +19,8 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stax.StAXResult;
 import javax.xml.transform.stream.StreamResult;
 
-public class MotornetService {private static final String username = "rcbnq4497";
+public class MotornetService {
+    private static final String username = "rcbnq4497";
     private static final String password=username;
     private static  URL url;
     static {

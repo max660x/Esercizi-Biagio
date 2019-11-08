@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="it"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    >
+    <f:view locale="it_IT">
+    <h:head>
+    
+	    <f:facet name="first">
+			 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+			<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
+	    </f:facet>    
+    
+    
+        <title><ui:insert name="title">Noleggio Lungo Termine</ui:insert></title>
+        <link href="#{request.contextPath}/themes/#{sessionScope['pvf'].theme}/css/stile.css" rel="stylesheet" type="text/css"/>
+        <link href="#{request.contextPath}/css/#{sessionScope['pvf'].theme}/jquery-ui-1.10.3.custom.css" rel="stylesheet" type="text/css"/>            	
+		<script language="javascript">
+		var timeDigit;
+		
+		jQuery('body').bind('ajaxError', function(event, xhr) {
+			var status = xhr.status;
+		    console.log("Global ajaxError: "+ xhr + ", "+ status);
+		    if (status == 401) {
+		        window.location = xhr.getResponseHeader('X-ERROR-PAGE') + "?errorMsg=Timeout";
+		    }
+		}); 
+		
+		$(document).ready(function(){
+			$(document).unbind('keydown').bind('keydown', function (event) {
+			    var doPrevent = false;
+			    if (event.keyCode === 8) {
+			        var d = event.srcElement || event.target;
+			        if ((d.tagName.toUpperCase() === 'INPUT' &amp;&amp; (d.type.toUpperCase() === 'TEXT' || d.type.toUpperCase() === 'PASSWORD')) 
+			             || d.tagName.toUpperCase() === 'TEXTAREA') {
+			            doPrevent = d.readOnly || d.disabled;
+			        }
+			        else {
+			            doPrevent = true;
+			        }
+			    }
+
+			    if (doPrevent) {
+			        event.preventDefault();
+			    }
+			});	
+			
+			$(document).keypress(function(e) {
+				  if(e.which == 13) {
+				     return false;
+				  }
+			});
+		});
+
+		function setFocus(idInput){
+			var el = document.getElementById(idInput);
+		    var len = el.value.length || 0;
+		    if ( len == 0 ){
+		    	el.focus();
+		    	return;
+		    }
+		    if (len) {
+		        if ('setSelectionRange' in el) {
+		        	//el.setSelectionRange(len, len);
+		        	temp=el.value;
+		        	el.value='';
+				    el.focus();
+				    el.value=temp;
+		        	}
+		        else if ('createTextRange' in el) { // for IE
+		            var range = el.createTextRange();
+		            range.moveStart('character', len);
+		            range.select();
+		        }
+		    }
+		    
+		    var now = new Date();
+			timeDigit = now.getTime();
+			
+		}
+		
+		function delayFilter(){
+			var now = new Date();
+			timeDigit = now.getTime();
+			var localTimeDigit = timeDigit;
+			
+			setTimeout(function(){
+							if ( timeDigit == localTimeDigit ){
+								document.getElementById('hiddenInput').focus();
+							}
+						},2000);
+		}
+		
+		function filterKeyPress(event){
+			var keyCode = event.which || event.keyCode;
+			if( keyCode &lt;= 20 ||
+				keyCode == 44 || 
+				keyCode == 46 || 
+				keyCode == 26 ||
+				keyCode == 27 ||
+				keyCode == 127 ||
+				( keyCode &gt;= 48 &amp;&amp; keyCode &lt;= 57 ) 
+			){
+				return true;
+			} else {
+				return false;
+			}
+		}
+		</script>
+		
+	</h:head>
+    <h:body style="height:100%; margin:0px; padding:0px;">
+    
+		
+		<p:growl id="growl" showDetail="false" showSummary="true" autoUpdate="true" sticky="true" severity="fatal" for="systemError"/> 
+		
+		<p:ajaxStatus onstart="statusDialog.show();" onsuccess="statusDialog.hide();"/>  
+		
+		<p:dialog modal="true" widgetVar="statusDialog" header=""   
+		        draggable="false" closable="false" resizable="false" styleClass="waitDialog">   
+		    <p:graphicImage  value="/img/ajaxloadingbar.gif">  
+		    </p:graphicImage>
+		   	<br></br><h:outputText style="display: block; margin: 0px auto; text-align: center;color: black;" value="Attendere..."/>  
+		</p:dialog>		
+	
+		
+		<p:layout fullPage="true" widgetVar="main" style="padding:0px; margin:0px;">   		  
+		  
+		   <p:layoutUnit position="north" resizable="false" closable="false" collapsible="false" size="85" style="border:0px; padding:0px; margin:0px;"> 
+		        <ui:include src="header.xhtml"/> 
+		    </p:layoutUnit>  
+		  
+		   <p:layoutUnit position="south" resizable="false" closable="false" collapsible="false"  style="border:0px; padding:0px; margin:0px;">  
+		        <ui:include src="footer.xhtml"/> 
+		    </p:layoutUnit>  
+		    
+		    <p:layoutUnit position="west" header="Menu" size="150" resizable="false" closable="false" collapsible="true" style="border:0px; padding:0px; margin:0px;">  
+	    		<ui:insert name="menu_content"/>
+	    	</p:layoutUnit>  
+ 
+		    <p:layoutUnit position="center" style="border:0px; padding:0px; margin:0px;">
+		    		<ui:insert name="content"/>
+		    </p:layoutUnit> 
+		         
+		</p:layout> 
+		<input type="text" value="" id="hiddenInput" style="position: static; top: -300px;"/>
+		         <script type="text/javascript">  
+function start() {  
+    statusDialog.show();  
+}  
+  
+function stop() {  
+    statusDialog.hide();  
+}  
+        </script> 
+    </h:body>
+    </f:view>
+</html>

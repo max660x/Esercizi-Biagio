@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="base.xhtml">
+
+    <ui:define name="content">
+        <div style="position: absolute; left: 25%; top: 10%">
+        <h:form id="searchTargaForm">
+            <p:inputText value="#{veicoloBean.targa}"/> Targa
+            <br/>
+            <p:inputText value="#{veicoloBean.brand}"/> Brand
+            <br/>
+            <p:commandButton type="submit" ajax="false" update=":getValutazioneForm" value="SearchTarga" action="#{veicoloBean.searchTarga}"></p:commandButton>
+        </h:form>
+        <br/>
+        <br/>
+        <p:inputText readonly="true" value="#{veicoloBean.searchTargaResponse.modello}"/>
+         <br/>
+        <p:inputText readonly="true" value="#{veicoloBean.searchTargaResponse.marca}"/>
+        <br/>
+        <h:form id="getValutazioneForm">
+            <p:inputText readonly="true" value="#{veicoloBean.targa}"/>
+            <p:inputText readonly="true" value="#{veicoloBean.searchTargaResponse.dataImmatricolazione}"/>
+            <br/>
+            <p:selectOneMenu value="#{veicoloBean.eutaxCode}">
+                <f:selectItems value="#{veicoloBean.searchTargaResponse.versioni}" var="versione" itemLabel="#{versione.description}" itemValue="#{versione.eurotaxCode}"/>
+            </p:selectOneMenu>
+            <br/>
+            <p:commandButton type="submit" action="#{veicoloBean.valutazione}" ajax="false" value="GetValutazione" update=":quotazioni"></p:commandButton>
+        </h:form>
+        <br/>
+        <br/>
+        <h:form id="quotazioni">
+        <p:inputText readonly="true" value="#{veicoloBean.valutazioneResponse.quotazione}"/> Quotazione
+        <br/>
+        <p:inputText readonly="true" value="#{veicoloBean.valutazioneResponse.quotazioneBlu}"/> Quotazione BLU
+        </h:form>
+        </div>
+    </ui:define>
+
+</ui:composition>
+</html>

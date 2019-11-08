@@ -24,5 +24,7 @@
     <orderEntry type="library" name="Maven: javax.faces:jsf-api:2.1" level="project" />
     <orderEntry type="library" name="Maven: com.sun.faces:jsf-api:2.0.2" level="project" />
     <orderEntry type="library" name="Maven: com.sun.faces:jsf-impl:2.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.primefaces:primefaces:7.0" level="project" />
+    <orderEntry type="library" name="Maven: org.primefaces.themes:smoothness:1.0.6" level="project" />
   </component>
 </module>
